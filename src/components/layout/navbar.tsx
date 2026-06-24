@@ -3,7 +3,6 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
-import { Button } from "@/components/ui/button"
 import { Search, Menu, X } from "lucide-react"
 
 export const Navbar = () => {
@@ -75,12 +74,6 @@ export const Navbar = () => {
             </button>
           </div>
 
-          {/* MYGTUKAS */}
-          <Button className="hidden md:flex bg-[#16AFD1] hover:bg-white text-black font-[900] uppercase italic text-[11px] tracking-widest px-8 rounded-10px transition-all border-none">
-            <span className="skew-x-[15deg]">E-Parduotuvė
-            </span>
-          </Button>
-
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden p-2 text-white"
@@ -108,14 +101,6 @@ export const Navbar = () => {
               {link.label}
             </Link>
           ))}
-        </div>
-        <div className="px-6 pb-6">
-          <Button
-            onClick={() => setOpen(false)}
-            className="w-full bg-[#16AFD1] hover:bg-white text-black font-[900] uppercase italic text-[11px] tracking-widest py-6 rounded-xl transition-all border-none"
-          >
-            <span className="skew-x-[15deg]">E-Parduotuvė</span>
-          </Button>
         </div>
       </div>
     </header>
