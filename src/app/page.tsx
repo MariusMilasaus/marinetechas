@@ -39,7 +39,15 @@ export default function Home() {
           alt="Marine Industry"
         />
         
-        <div className="absolute inset-0 bg-black/30" />
+        <div className="absolute inset-0 bg-black/20" />
+
+        <div
+          className="absolute inset-y-0 left-0 w-full md:w-3/4 backdrop-blur-md bg-black/10"
+          style={{
+            maskImage: "linear-gradient(to right, black 45%, transparent 95%)",
+            WebkitMaskImage: "linear-gradient(to right, black 45%, transparent 95%)",
+          }}
+        />
 
         <div className="absolute inset-0 flex items-center z-20">
           <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
@@ -49,7 +57,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-xl text-left text-white"
             >
-              <h2 className="text-2xl md:text-5xl font-black uppercase tracking-tight md:tracking-wide leading-tight drop-shadow-lg">
+              <h2 className="font-[family-name:var(--font-merriweather)] text-2xl md:text-4xl font-normal leading-snug drop-shadow-lg">
                 Patikimi inžineriniai sprendimai pramonei ir laivynui
               </h2>
             </motion.div>
