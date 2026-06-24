@@ -4,7 +4,7 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { useRef } from "react";
 import Link from "next/link";
 // Techninės ikonos be italic prieskonių
-import { Clock, HardHat, ShieldCheck, Zap } from "lucide-react";
+import { Clock, HardHat, Globe, Zap } from "lucide-react";
 
 export default function Home() {
   const containerRef = useRef(null);
@@ -15,10 +15,10 @@ export default function Home() {
   });
 
   const reasons = [
-    { text: "Operatyvumas 24/7", icon: <Clock size={16} /> },
-    { text: "Inžinerinė kompetencija", icon: <HardHat size={16} /> },
-    { text: "Sertifikuota kokybė", icon: <ShieldCheck size={16} /> },
-    { text: "Individualūs sprendimai", icon: <Zap size={16} /> }
+    { value: "10+", text: "Metų patirties", icon: <Clock size={18} /> },
+    { value: "500+", text: "Atliktų projektų", icon: <HardHat size={18} /> },
+    { value: "20+", text: "Aptarnaujamų šalių", icon: <Globe size={18} /> },
+    { value: "24/7", text: "Pasiekiamumas", icon: <Zap size={18} /> }
   ];
 
   const brands = [
@@ -77,14 +77,46 @@ export default function Home() {
         </div>
       </section>
 
-      {/* APIE MUS */}
-      <section className="max-w-6xl mx-auto py-10 px-6 text-center text-slate-900">
-        <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter">
-          Sveiki atvykę į <span className="text-[#0C5588]">Marine</span><span className="text-[#16AFD1]">TECH</span>
-        </h2>
-        <div className="max-w-4xl mx-auto text-slate-600 leading-relaxed space-y-6 text-lg font-medium">
-          <p>UAB „Marinetechas“ įkurta 2015 m. Sėkmingai dirbame laivų remonto srityje ir pramonės sektoriuje, nuolat plėsdami savo paslaugų spektrą ir diegdami pažangiausias technologijas.</p>
-          <p>Mūsų specialistai pasiruošę atvykti į bet kurią pasaulio vietą ir atlikti visus reikalingus remonto bei aptarnavimo darbus. Mums svarbus kiekvienas užsakovas, todėl garantuojame kokybę ir greitą darbų atlikimą.</p>
+      {/* APIE MUS + KODĖL RINKTIS MUS */}
+      <section ref={containerRef} className="max-w-6xl mx-auto py-16 px-6 text-slate-900 overflow-hidden">
+        <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="text-left">
+            <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter">
+              Sveiki atvykę į <span className="text-[#0C5588]">Marine</span><span className="text-[#16AFD1]">TECH</span>
+            </h2>
+            <div className="text-slate-600 leading-relaxed space-y-6 text-lg font-medium">
+              <p>UAB „Marinetechas“ įkurta 2015 m. Sėkmingai dirbame laivų remonto srityje ir pramonės sektoriuje, nuolat plėsdami savo paslaugų spektrą ir diegdami pažangiausias technologijas.</p>
+              <p>Mūsų specialistai pasiruošę atvykti į bet kurią pasaulio vietą ir atlikti visus reikalingus remonto bei aptarnavimo darbus. Mums svarbus kiekvienas užsakovas, todėl garantuojame kokybę ir greitą darbų atlikimą.</p>
+            </div>
+          </div>
+
+          <div className="grid grid-cols-2 gap-6">
+            {reasons.map((item, i) => {
+              const start = i * 0.07 + 0.3;
+              const end = start + 0.1;
+
+              const y = useTransform(scrollYProgress, [start, end], [-100, 0]);
+              const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
+
+              return (
+                <motion.div
+                  key={i}
+                  style={{ y, opacity }}
+                  className="flex flex-col items-center text-center p-4 bg-slate-50 rounded-lg"
+                >
+                  <div className="bg-[#16AFD1] p-2.5 rounded-full mb-3 shadow-md text-white">
+                    {item.icon}
+                  </div>
+                  <span className="text-2xl font-black text-[#0C5588] leading-none">
+                    {item.value}
+                  </span>
+                  <span className="text-slate-500 font-semibold uppercase tracking-tight text-[10px] md:text-[11px] mt-1">
+                    {item.text}
+                  </span>
+                </motion.div>
+              );
+            })}
+          </div>
         </div>
       </section>
 
@@ -106,36 +138,6 @@ export default function Home() {
               </motion.div>
             </Link>
           ))}
-        </div>
-      </section>
-
-      {/* KODĖL RINKTIS MUS - Tikras skrolinimo efektas be italic */}
-      <section ref={containerRef} className="bg- py-6 border- border-slate-100 overflow-hidden">
-        <div className="max-w-6xl mx-auto px-6">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-4">
-            {reasons.map((item, i) => {
-              const start = i * 0.07 + 0.3; 
-              const end = start + 0.1;
-              
-              const y = useTransform(scrollYProgress, [start, end], [-100, 0]);
-              const opacity = useTransform(scrollYProgress, [start, end], [0, 1]);
-
-              return (
-                <motion.div 
-                  key={i}
-                  style={{ y, opacity }}
-                  className="flex flex-col items-center text-center p-2"
-                >
-                  <div className="bg-[#16AFD1] p-2.5 rounded-full mb-3 shadow-md text-white">
-                    {item.icon}
-                  </div>
-                  <span className="text-slate-900 font-black uppercase tracking-tighter text-[10px] md:text-[11px]">
-                    {item.text}
-                  </span>
-                </motion.div>
-              );
-            })}
-          </div>
         </div>
       </section>
 
