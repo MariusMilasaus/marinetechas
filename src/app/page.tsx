@@ -57,7 +57,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-xl text-left text-white"
             >
-              <span className="block text-[#16AFD1] font-bold uppercase tracking-widest text-xs md:text-sm mb-3">
+              <span className="block text-[#16AFD1] font-bold uppercase tracking-widest text-xs md:text-sm mb-3 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
                 UAB Marinetechas · Nuo 2015 m.
               </span>
               <h1 className="text-2xl md:text-4xl font-semibold leading-snug drop-shadow-lg mb-3">
