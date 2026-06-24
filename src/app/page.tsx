@@ -147,17 +147,17 @@ export default function Home() {
       </section>
 
       {/* LOOP JUOSTA */}
-      <section className="py-8 bg-white overflow-hidden relative">
+      <section className="py-4 bg-white overflow-hidden relative">
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
         <div className="flex">
-          <motion.div 
-            className="flex gap-16 items-center whitespace-nowrap"
+          <motion.div
+            className="flex gap-10 items-center whitespace-nowrap"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           >
             {[...brands, ...brands].map((brand, i) => (
-              <span key={i} className="text-2xl md:text-4xl font-black text-slate-300 hover:text-[#16AFD1] transition-colors uppercase tracking-tighter">
+              <span key={i} className="text-base md:text-xl font-black text-slate-300 hover:text-[#16AFD1] transition-colors uppercase tracking-tighter">
                 {brand}
               </span>
             ))}
