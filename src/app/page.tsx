@@ -39,13 +39,13 @@ export default function Home() {
           alt="Marine Industry"
         />
         
-        <div className="absolute inset-0 bg-black/20" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06263d]/90 via-[#0C5588]/60 to-transparent" />
 
         <div
-          className="absolute inset-y-0 left-0 w-full md:w-3/4 backdrop-blur-md bg-black/10"
+          className="absolute inset-y-0 left-0 w-full md:w-3/4 backdrop-blur-sm"
           style={{
-            maskImage: "linear-gradient(to right, black 45%, transparent 95%)",
-            WebkitMaskImage: "linear-gradient(to right, black 45%, transparent 95%)",
+            maskImage: "linear-gradient(to right, black 40%, transparent 90%)",
+            WebkitMaskImage: "linear-gradient(to right, black 40%, transparent 90%)",
           }}
         />
 
@@ -57,9 +57,18 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="max-w-xl text-left text-white"
             >
-              <h2 className="font-[family-name:var(--font-merriweather)] text-2xl md:text-4xl font-normal leading-snug drop-shadow-lg">
+              <span className="block text-[#16AFD1] font-bold uppercase tracking-widest text-xs md:text-sm mb-3">
+                UAB Marinetechas · Nuo 2015 m.
+              </span>
+              <h2 className="text-2xl md:text-4xl font-semibold leading-snug drop-shadow-lg mb-6">
                 Patikimi inžineriniai sprendimai pramonei ir laivynui
               </h2>
+              <Link
+                href="/kontaktai"
+                className="inline-block bg-white text-[#0C5588] px-8 py-3 font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all"
+              >
+                Gauti pasiūlymą
+              </Link>
             </motion.div>
           </div>
         </div>
