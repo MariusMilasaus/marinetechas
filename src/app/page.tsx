@@ -39,19 +39,21 @@ export default function Home() {
           alt="Marine Industry"
         />
         
+        <div className="absolute inset-0 bg-black/30" />
+
         <div className="absolute inset-0 flex items-center z-20">
-          <motion.div 
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 1 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full bg-[#16AFD1]/90 py-2 md:py-4 text-center text-white shadow-xl backdrop-blur-xm"
-          >
-            <div className="max-w-7xl mx-auto px-4">
-              <h2 className="text-xl md:text-4xl font-black uppercase tracking-tight md:tracking-wide leading-tight">
-                Patikimi inžineriniai sprendimai <br className="md:hidden" /> pramonei ir laivynui
+          <div className="max-w-7xl mx-auto w-full px-6 md:px-10">
+            <motion.div
+              initial={{ x: -100, opacity: 0 }}
+              animate={{ x: 0, opacity: 1 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="max-w-xl text-left text-white"
+            >
+              <h2 className="text-2xl md:text-5xl font-black uppercase tracking-tight md:tracking-wide leading-tight drop-shadow-lg">
+                Patikimi inžineriniai sprendimai pramonei ir laivynui
               </h2>
-            </div>
-          </motion.div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
