@@ -60,9 +60,12 @@ export default function Home() {
               <span className="block text-[#16AFD1] font-bold uppercase tracking-widest text-xs md:text-sm mb-3">
                 UAB Marinetechas · Nuo 2015 m.
               </span>
-              <h2 className="text-2xl md:text-4xl font-semibold leading-snug drop-shadow-lg mb-6">
+              <h1 className="text-2xl md:text-4xl font-semibold leading-snug drop-shadow-lg mb-3">
                 Patikimi inžineriniai sprendimai pramonei ir laivynui
-              </h2>
+              </h1>
+              <p className="text-sm md:text-base text-white/80 font-medium mb-6">
+                Greitai. Patikimai. Visame pasaulyje.
+              </p>
               <Link
                 href="/kontaktai"
                 className="inline-block bg-white text-[#0C5588] px-8 py-3 font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all"
@@ -76,9 +79,9 @@ export default function Home() {
 
       {/* APIE MUS */}
       <section className="max-w-6xl mx-auto py-10 px-6 text-center text-slate-900">
-        <h1 className="text-4xl font-black mb-8 uppercase tracking-tighter">
+        <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter">
           Sveiki atvykę į <span className="text-[#0C5588]">Marine</span><span className="text-[#16AFD1]">TECH</span>
-        </h1>
+        </h2>
         <div className="max-w-4xl mx-auto text-slate-600 leading-relaxed space-y-6 text-lg font-medium">
           <p>UAB „Marinetechas“ įkurta 2015 m. Sėkmingai dirbame laivų remonto srityje ir pramonės sektoriuje, nuolat plėsdami savo paslaugų spektrą ir diegdami pažangiausias technologijas.</p>
           <p>Mūsų specialistai pasiruošę atvykti į bet kurią pasaulio vietą ir atlikti visus reikalingus remonto bei aptarnavimo darbus. Mums svarbus kiekvienas užsakovas, todėl garantuojame kokybę ir greitą darbų atlikimą.</p>
