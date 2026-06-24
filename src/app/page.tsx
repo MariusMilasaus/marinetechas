@@ -39,10 +39,10 @@ export default function Home() {
           alt="Marine Industry"
         />
         
-        <div className="absolute inset-0 bg-gradient-to-r from-[#06263d]/90 via-[#0C5588]/60 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-r from-[#06263d]/95 via-[#0C5588]/70 to-transparent md:from-[#06263d]/90 md:via-[#0C5588]/60" />
 
         <div
-          className="absolute inset-y-0 left-0 w-full md:w-3/4 backdrop-blur-sm"
+          className="absolute inset-y-0 left-0 w-3/4 backdrop-blur-sm hidden md:block"
           style={{
             maskImage: "linear-gradient(to right, black 40%, transparent 90%)",
             WebkitMaskImage: "linear-gradient(to right, black 40%, transparent 90%)",
