@@ -124,16 +124,21 @@ export default function Home() {
       <section className="max-w-7xl mx-auto pb-10 px-6">
         <div className="grid md:grid-cols-3 gap-8">
           {[
-            { title: "Laivų remontas", img: "/4.png", href: "/paslaugos" },
-            { title: "Šaldymo įranga", img: "/3.png", href: "/paslaugos" },
-            { title: "Variklių ir jų dalių tiekimas", img: "/2.png", href: "/paslaugos" }
+            { title: "Laivų remontas", desc: "Korpuso, variklių ir denio įrangos remontas bei techninis aptarnavimas visame pasaulyje.", img: "/4.png", href: "/paslaugos" },
+            { title: "Šaldymo įranga", desc: "Laivų šaldymo sistemų montavimas, remontas ir periodinė priežiūra.", img: "/3.png", href: "/paslaugos" },
+            { title: "Variklių ir jų dalių tiekimas", desc: "Originalių ir suderinamų variklio dalių paieška bei greitas tiekimas.", img: "/2.png", href: "/paslaugos" }
           ].map((item, idx) => (
             <Link href={item.href} key={idx}>
               <motion.div whileHover={{ y: -10 }} className="group cursor-pointer">
-                <div className="relative h-64 overflow-hidden mb-4 border-b-8 border-[#0C5588] shadow-xl">
+                <div className="relative h-64 overflow-hidden mb-4 border-b-8 border-[#0C5588] group-hover:border-[#16AFD1] shadow-xl group-hover:shadow-2xl transition-all duration-500">
                   <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt={item.title}/>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent group-hover:from-[#0C5588]/80 transition duration-500" />
-                  <h3 className="absolute bottom-6 left-6 text-lg font-black text-white uppercase tracking-widest">{item.title}</h3>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-[#0C5588]/90 transition duration-500" />
+                  <div className="absolute bottom-6 left-6 right-6">
+                    <h3 className="text-lg font-black text-white uppercase tracking-widest mb-2">{item.title}</h3>
+                    <p className="text-white/90 text-sm leading-snug max-h-0 opacity-0 group-hover:max-h-24 group-hover:opacity-100 overflow-hidden transition-all duration-500">
+                      {item.desc}
+                    </p>
+                  </div>
                 </div>
               </motion.div>
             </Link>
