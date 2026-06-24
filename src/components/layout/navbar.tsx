@@ -1,9 +1,21 @@
+"use client";
+
 import Link from "next/link"
 import Image from "next/image"
+import { useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ShoppingCart, Search, Menu } from "lucide-react"
+import { Search, Menu, X } from "lucide-react"
 
 export const Navbar = () => {
+  const [open, setOpen] = useState(false);
+
+  const links = [
+    { href: "/apie-mus", label: "Apie mus" },
+    { href: "/paslaugos", label: "Paslaugos" },
+    { href: "/katalogas", label: "Katalogas" },
+    { href: "/kontaktai", label: "Kontaktai" },
+  ];
+
   return (
     <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
       <div className="w-full px-6 md:px-12 h-20 flex items-center justify-between">
@@ -61,10 +73,6 @@ export const Navbar = () => {
             <button className="p-2 text-white hover:text-[#16AFD1] transition-colors">
               <Search size={25} strokeWidth={2.5} />
             </button>
-            <button className="p-2 text-white hover:text-[#16AFD1] transition-colors relative">
-              <ShoppingCart size={25} strokeWidth={2.5} />
-              <span className="absolute top-1 right-1 h-3.5 w-3.5 bg-[#16AFD1] text-[9px] text-black rounded-full flex items-center justify-center font-[900]">0</span>
-            </button>
           </div>
 
           {/* MYGTUKAS */}
@@ -73,9 +81,41 @@ export const Navbar = () => {
             </span>
           </Button>
 
-          <button className="lg:hidden p-2 text-white">
-            <Menu size={28} />
+          <button
+            onClick={() => setOpen(!open)}
+            className="lg:hidden p-2 text-white"
+            aria-label="Meniu"
+          >
+            {open ? <X size={28} /> : <Menu size={28} />}
           </button>
+        </div>
+      </div>
+
+      {/* MOBILE MENIU */}
+      <div
+        className={`lg:hidden overflow-hidden transition-all duration-300 bg-[#06263d]/98 backdrop-blur-xl border-t border-white/10 ${
+          open ? "max-h-[500px] opacity-100" : "max-h-0 opacity-0"
+        }`}
+      >
+        <div className="grid grid-cols-2 gap-4 p-6">
+          {links.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              onClick={() => setOpen(false)}
+              className="flex items-center justify-center text-center py-4 px-3 rounded-xl bg-white/5 border border-white/10 text-white font-black uppercase tracking-widest text-xs hover:bg-[#16AFD1] hover:text-black transition-colors"
+            >
+              {link.label}
+            </Link>
+          ))}
+        </div>
+        <div className="px-6 pb-6">
+          <Button
+            onClick={() => setOpen(false)}
+            className="w-full bg-[#16AFD1] hover:bg-white text-black font-[900] uppercase italic text-[11px] tracking-widest py-6 rounded-xl transition-all border-none"
+          >
+            <span className="skew-x-[15deg]">E-Parduotuvė</span>
+          </Button>
         </div>
       </div>
     </header>
