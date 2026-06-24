@@ -1,11 +1,17 @@
 "use client";
 
-import { Wrench, Snowflake, Zap, Anchor, Check } from "lucide-react"
+import { Wrench, Snowflake, Zap, Anchor, Check, Award } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
 import { useLanguage } from "@/lib/i18n/language-context"
 
 const groupIcons = [<Wrench size={40} key="0" />, <Snowflake size={40} key="1" />, <Zap size={40} key="2" />, <Anchor size={40} key="3" />];
 const groupImages = ["/5.png", "/3.png", "/6.png", "/7.png"];
+
+const certificates = [
+  { src: "/sertifikatas-rmrs.jpg", alt: "RMRS sertifikatas" },
+  { src: "/sertifikatas-atestacija.jpg", alt: "Atestacijos pažymėjimas" },
+];
 
 export default function Paslaugos() {
   const { t } = useLanguage();
@@ -78,6 +84,41 @@ export default function Paslaugos() {
                 </ul>
               </div>
             </div>
+          ))}
+        </div>
+      </section>
+
+      {/* SERTIFIKATAI */}
+      <section className="max-w-7xl mx-auto px-6 md:px-12 pb-24">
+        <div className="text-center mb-12">
+          <div className="inline-flex items-center justify-center p-4 bg-slate-50 rounded-full mb-4">
+            <Award className="text-[#16AFD1]" size={32} />
+          </div>
+          <h2 className="text-3xl font-black uppercase tracking-tighter text-slate-900 mb-2">
+            {t.paslaugos.certificatesTitle}
+          </h2>
+          <p className="text-slate-500 text-sm font-medium uppercase tracking-widest">
+            {t.paslaugos.certificatesSubtitle}
+          </p>
+        </div>
+
+        <div className="grid sm:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {certificates.map((cert, idx) => (
+            <a
+              key={idx}
+              href={cert.src}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block relative rounded-xl overflow-hidden border border-slate-100 shadow-sm hover:shadow-2xl transition-all duration-500 group"
+            >
+              <Image
+                src={cert.src}
+                alt={cert.alt}
+                width={480}
+                height={640}
+                className="w-full h-auto object-contain bg-white group-hover:scale-[1.02] transition-transform duration-500"
+              />
+            </a>
           ))}
         </div>
       </section>
