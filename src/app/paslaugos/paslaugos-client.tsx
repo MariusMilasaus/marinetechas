@@ -37,7 +37,7 @@ export default function PaslaugosClient() {
         <div className="absolute inset-0 bg-slate-900/75"></div>
 
         <div className="relative z-10 text-center max-w-4xl px-6">
-          <h4 className="text-[#16AFD1] font-black uppercase tracking-[0.4em] mb-4 text-sm">{t.paslaugos.heroLabel}</h4>
+          <p className="text-[#16AFD1] font-black uppercase tracking-[0.4em] mb-4 text-sm">{t.paslaugos.heroLabel}</p>
           <h1 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-none">
             {t.paslaugos.heroTitlePrefix} <span className="text-[#16AFD1]">{t.paslaugos.heroTitleHighlight}</span>
           </h1>

@@ -7,6 +7,7 @@ export const translations = {
       kontaktai: "Kontaktai",
       susisiekite: "Susisiekite",
       meniu: "Meniu",
+      search: "Paieška",
     },
     footer: {
       description: "Profesionalūs inžineriniai sprendimai ir operatyvus aptarnavimas visame pasaulyje.",
@@ -224,6 +225,7 @@ export const translations = {
       kontaktai: "Contact",
       susisiekite: "Get in touch",
       meniu: "Menu",
+      search: "Search",
     },
     footer: {
       description: "Professional engineering solutions and responsive service worldwide.",
@@ -441,6 +443,7 @@ export const translations = {
       kontaktai: "Kontakt",
       susisiekite: "Ta kontakt",
       meniu: "Meny",
+      search: "Søk",
     },
     footer: {
       description: "Profesjonelle ingeniørløsninger og rask service over hele verden.",

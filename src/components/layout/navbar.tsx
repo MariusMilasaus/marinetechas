@@ -71,7 +71,10 @@ export const Navbar = () => {
 
           {/* IKONOS */}
           <div className="flex items-center gap-1">
-            <button className="p-2 text-white hover:text-[#16AFD1] transition-colors">
+            <button
+              className="p-2 text-white hover:text-[#16AFD1] transition-colors"
+              aria-label={t.nav.search}
+            >
               <Search size={25} strokeWidth={2.5} />
             </button>
           </div>

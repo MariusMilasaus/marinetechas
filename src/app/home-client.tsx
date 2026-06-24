@@ -94,7 +94,7 @@ export default function HomeClient() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-left">
             <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter">
-              {t.home.welcomePrefix} <span className="text-[#0C5588]">Marine</span><span className="text-[#16AFD1]">TECH</span>
+              {t.home.welcomePrefix} <span className="text-[#0C5588]">Marine</span><span className="text-[#0A7E9B]">TECH</span>
             </h2>
             <div className="text-slate-600 leading-relaxed space-y-6 text-lg font-medium">
               <p>{t.home.aboutParagraph1}</p>
@@ -164,7 +164,7 @@ export default function HomeClient() {
       <section className="py-4 bg-white overflow-hidden relative">
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
-        <div className="flex">
+        <div className="flex" aria-hidden="true">
           <motion.div
             className="flex gap-10 items-center whitespace-nowrap"
             animate={{ x: ["0%", "-50%"] }}

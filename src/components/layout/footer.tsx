@@ -33,27 +33,27 @@ export function Footer() {
 
           {/* 2. Paslaugos */}
           <div className="space-y-3">
-            <h4 className="text-[11px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.paslaugosTitle}</h4>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.paslaugosTitle}</p>
             <ul className="space-y-1.5 text-xs text-slate-700">
               {t.footer.paslaugosItems.map((item, i) => (
-                <li key={i}><Link href="/paslaugos" className="hover:text-[#0C5588] transition-colors">{item}</Link></li>
+                <li key={i}><Link href="/paslaugos" className="inline-block py-1.5 hover:text-[#0C5588] transition-colors">{item}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* 3. Teisinė informacija */}
           <div className="space-y-3">
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.infoTitle}</h4>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.infoTitle}</p>
             <ul className="space-y-1.5 text-xs text-slate-700">
               {t.footer.infoItems.map((item, i) => (
-                <li key={i}><Link href={infoLinks[i]} className="hover:text-[#0C5588] transition-colors">{item}</Link></li>
+                <li key={i}><Link href={infoLinks[i]} className="inline-block py-1.5 hover:text-[#0C5588] transition-colors">{item}</Link></li>
               ))}
             </ul>
           </div>
 
           {/* 4. Kontaktai */}
           <div className="space-y-3">
-            <h4 className="text-[10px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.contactTitle}</h4>
+            <p className="text-[10px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.contactTitle}</p>
             <div className="space-y-3">
               <div className="flex flex-col">
                 <span className="text-slate-900 text-[10px] uppercase font-black tracking-tighter">{t.footer.phoneLabel}</span>
