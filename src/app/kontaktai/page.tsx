@@ -2,8 +2,29 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Kontaktai() {
+  const { t } = useLanguage();
+
+  const contactItems = [
+    {
+      icon: <Phone className="text-[#16AFD1]" />,
+      label: t.kontaktai.phoneLabel,
+      values: ["+370 677 67287", "+370 601 55938", "+370 615 47157"]
+    },
+    {
+      icon: <Mail className="text-[#16AFD1]" />,
+      label: t.kontaktai.emailLabel,
+      values: ["office@marinetech.lt", "info@marinetech.lt"]
+    },
+    {
+      icon: <MapPin className="text-[#16AFD1]" />,
+      label: t.kontaktai.addressLabel,
+      values: ["Klauso Malūno g. 1, Klaipėda"]
+    }
+  ];
+
   return (
     <main className="w-full min-h-screen bg-white pt-[60px] md:pt-[120px] pb-20 overflow-x-hidden">
   <div className="max-w-7xl mx-auto px-6">
@@ -15,7 +36,7 @@ export default function Kontaktai() {
         animate={{ y: 0, opacity: 1 }}
         className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900"
       >
-        Susisiekite su <span className="text-[#16AFD1]">mumis</span>
+        {t.kontaktai.headingPrefix} <span className="text-[#16AFD1]">{t.kontaktai.headingHighlight}</span>
       </motion.h1>
       <div className="w-20 h-2 bg-[#0C5588] mt-4"></div>
     </header>
@@ -30,27 +51,11 @@ export default function Kontaktai() {
             className="space-y-12"
           >
             <p className="text-lg text-slate-600 leading-relaxed max-w-md">
-              Turite klausimų ar norite pasitarti dėl būsimo projekto? Mūsų komanda pasiruošusi jums padėti 24/7.
+              {t.kontaktai.intro}
             </p>
 
             <div className="space-y-8">
-              {[
-                {
-                  icon: <Phone className="text-[#16AFD1]" />,
-                  label: "Telefonas",
-                  values: ["+370 677 67287", "+370 601 55938", "+370 615 47157"]
-                },
-                {
-                  icon: <Mail className="text-[#16AFD1]" />,
-                  label: "El. paštas",
-                  values: ["office@marinetech.lt", "info@marinetech.lt"]
-                },
-                {
-                  icon: <MapPin className="text-[#16AFD1]" />,
-                  label: "Adresas",
-                  values: ["Klauso Malūno g. 1, Klaipėda"]
-                }
-              ].map((item, idx) => (
+              {contactItems.map((item, idx) => (
                 <div key={idx} className="flex items-start gap-6 group">
                   <div className="p-4 rounded-lg bg-slate-50 group-hover:bg-[#16AFD1] group-hover:text-white transition-colors duration-300 shadow-sm">
                     {item.icon}
@@ -66,8 +71,8 @@ export default function Kontaktai() {
             </div>
 
             <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold text-slate-400 uppercase tracking-widest pt-4 border-t border-slate-100">
-              <span>Į.k: 304064996</span>
-              <span>PVM: LT100010805312</span>
+              <span>{t.kontaktai.companyCodeLabel}: 304064996</span>
+              <span>{t.kontaktai.vatLabel}: LT100010805312</span>
             </div>
           </motion.div>
 
@@ -82,47 +87,46 @@ export default function Kontaktai() {
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">Vardas Pavardė</label>
-                  <input 
-                    type="text" 
-                    placeholder="Jonas Jonaitis"
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formNameLabel}</label>
+                  <input
+                    type="text"
+                    placeholder={t.kontaktai.formNamePlaceholder}
                     className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
                   />
                 </div>
                 <div className="space-y-2">
-                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">El. paštas</label>
+                  <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formEmailLabel}</label>
                   <input
                     type="email"
-                    placeholder="jonas@imone.lt"
+                    placeholder={t.kontaktai.formEmailPlaceholder}
                     className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-black uppercase tracking-widest text-slate-500">Tema</label>
+                <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formTopicLabel}</label>
                 <select className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] outline-none transition-all font-medium text-slate-900">
-                  <option>Laivų remontas</option>
-                  <option>Šaldymo įranga</option>
-                  <option>Dalių tiekimas</option>
-                  <option>Kita</option>
+                  {t.kontaktai.formTopicOptions.map((opt, i) => (
+                    <option key={i}>{opt}</option>
+                  ))}
                 </select>
               </div>
 
               <div className="space-y-2">
-                <label className="text-xs font-black uppercase tracking-widest text-slate-500">Jūsų žinutė</label>
-                <textarea 
-                  rows={5} 
-                  placeholder="Aprašykite savo poreikį..."
+                <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formMessageLabel}</label>
+                <textarea
+                  rows={5}
+                  placeholder={t.kontaktai.formMessagePlaceholder}
                   className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900 resize-none"
                 ></textarea>
               </div>
 
-              <button 
+              <button
                 type="submit"
                 className="w-full bg-[#0C5588] hover:bg-[#16AFD1] text-white py-5 px-10 rounded-md font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-300 shadow-lg group"
               >
-                <span>Siųsti užklausą</span>
+                <span>{t.kontaktai.submitButton}</span>
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
             </form>
@@ -138,7 +142,7 @@ export default function Kontaktai() {
           className="mt-16 rounded-xl overflow-hidden shadow-xl border border-slate-100"
         >
           <iframe
-            title="UAB Marinetechas žemėlapis"
+            title={t.kontaktai.mapTitle}
             src="https://www.google.com/maps?q=Klauso+Mal%C5%ABno+g.+1,+Klaip%C4%97da&output=embed"
             className="w-full h-[400px] border-0"
             loading="lazy"

@@ -4,15 +4,24 @@ import Link from "next/link"
 import Image from "next/image"
 import { useState } from "react"
 import { Search, Menu, X, Building2, Wrench, PackageSearch, Phone, Mail, MapPin, ChevronRight } from "lucide-react"
+import { useLanguage } from "@/lib/i18n/language-context"
+import type { Locale } from "@/lib/i18n/translations"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const { locale, setLocale, t } = useLanguage();
 
   const links = [
-    { href: "/apie-mus", label: "Apie mus", icon: <Building2 size={20} /> },
-    { href: "/paslaugos", label: "Paslaugos", icon: <Wrench size={20} /> },
-    { href: "/katalogas", label: "Katalogas", icon: <PackageSearch size={20} /> },
-    { href: "/kontaktai", label: "Kontaktai", icon: <Phone size={20} /> },
+    { href: "/apie-mus", label: t.nav.apieMus, icon: <Building2 size={20} /> },
+    { href: "/paslaugos", label: t.nav.paslaugos, icon: <Wrench size={20} /> },
+    { href: "/katalogas", label: t.nav.katalogas, icon: <PackageSearch size={20} /> },
+    { href: "/kontaktai", label: t.nav.kontaktai, icon: <Phone size={20} /> },
+  ];
+
+  const languages: { code: Locale; flag: string; label: string }[] = [
+    { code: "lt", flag: "https://flagcdn.com/w40/lt.png", label: "LT" },
+    { code: "no", flag: "https://flagcdn.com/w40/no.png", label: "NO" },
+    { code: "en", flag: "https://flagcdn.com/w40/gb.png", label: "EN" },
   ];
 
   return (
@@ -33,10 +42,10 @@ export const Navbar = () => {
 
         {/* PAGRINDINIS MENIU */}
         <nav className="hidden lg:flex items-center gap-10 text-[12px] font-black tracking-[0.2em] text-white uppercase">
-          <Link href="/apie-mus" className="hover:text-[#16AFD1] transition-colors">Apie mus</Link>
-          <Link href="/paslaugos" className="hover:text-[#16AFD1] transition-colors">Paslaugos</Link>
-  <Link href="/katalogas" className="hover:text-[#16AFD1] transition-colors">Katalogas</Link>
-  <Link href="/kontaktai" className="hover:text-[#16AFD1] transition-colors">Kontaktai</Link>
+          <Link href="/apie-mus" className="hover:text-[#16AFD1] transition-colors">{t.nav.apieMus}</Link>
+          <Link href="/paslaugos" className="hover:text-[#16AFD1] transition-colors">{t.nav.paslaugos}</Link>
+          <Link href="/katalogas" className="hover:text-[#16AFD1] transition-colors">{t.nav.katalogas}</Link>
+          <Link href="/kontaktai" className="hover:text-[#16AFD1] transition-colors">{t.nav.kontaktai}</Link>
         </nav>
 
         {/* DEŠINĖ PUSĖ */}
@@ -44,27 +53,20 @@ export const Navbar = () => {
           
           {/* KALBŲ PASIRINKIMAS (LT, NO, EN) */}
           <div className="hidden sm:flex items-center gap-4 bg-white/10 border border-white/10 px-4 py-2 rounded-full">
-            {/* LT */}
-            <button className="flex items-center gap-1.5 hover:scale-110 transition-transform">
-              <img src="https://flagcdn.com/w40/lt.png" className="w-5 h-3.5 object-cover rounded-sm" alt="LT" />
-              <span className="text-[10px] font-black text-white">LT</span>
-            </button>
-            
-            <div className="w-[1px] h-3 bg-white/20" />
-            
-            {/* NO */}
-            <button className="flex items-center gap-1.5 hover:scale-110 transition-transform opacity-70 hover:opacity-100">
-              <img src="https://flagcdn.com/w40/no.png" className="w-5 h-3.5 object-cover rounded-sm" alt="NO" />
-              <span className="text-[10px] font-black text-white">NO</span>
-            </button>
-
-            <div className="w-[1px] h-3 bg-white/20" />
-
-            {/* EN (Anglų kalba) */}
-            <button className="flex items-center gap-1.5 hover:scale-110 transition-transform opacity-70 hover:opacity-100">
-              <img src="https://flagcdn.com/w40/gb.png" className="w-5 h-3.5 object-cover rounded-sm" alt="EN" />
-              <span className="text-[10px] font-black text-white">EN</span>
-            </button>
+            {languages.map((lang, i) => (
+              <div key={lang.code} className="flex items-center gap-4">
+                {i > 0 && <div className="w-[1px] h-3 bg-white/20" />}
+                <button
+                  onClick={() => setLocale(lang.code)}
+                  className={`flex items-center gap-1.5 hover:scale-110 transition-transform ${
+                    locale === lang.code ? "opacity-100" : "opacity-70 hover:opacity-100"
+                  }`}
+                >
+                  <img src={lang.flag} className="w-5 h-3.5 object-cover rounded-sm" alt={lang.label} />
+                  <span className="text-[10px] font-black text-white">{lang.label}</span>
+                </button>
+              </div>
+            ))}
           </div>
 
           {/* IKONOS */}
@@ -77,7 +79,7 @@ export const Navbar = () => {
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden p-2 text-white"
-            aria-label="Meniu"
+            aria-label={t.nav.meniu}
           >
             {open ? <X size={28} /> : <Menu size={28} />}
           </button>
@@ -105,11 +107,27 @@ export const Navbar = () => {
           ))}
         </div>
 
+        {/* KALBOS (mobile, kai paslėpta viršuje) */}
+        <div className="sm:hidden px-6 pb-2 flex items-center justify-center gap-4 bg-white/5 mx-6 rounded-full border border-white/10 py-2 w-fit">
+          {languages.map((lang, i) => (
+            <div key={lang.code} className="flex items-center gap-4">
+              {i > 0 && <div className="w-[1px] h-3 bg-white/20" />}
+              <button
+                onClick={() => setLocale(lang.code)}
+                className={`flex items-center gap-1.5 ${locale === lang.code ? "opacity-100" : "opacity-60"}`}
+              >
+                <img src={lang.flag} className="w-5 h-3.5 object-cover rounded-sm" alt={lang.label} />
+                <span className="text-[10px] font-black text-white">{lang.label}</span>
+              </button>
+            </div>
+          ))}
+        </div>
+
         {/* NAUDINGA INFORMACIJA */}
-        <div className="px-6 pb-6 pt-2">
+        <div className="px-6 pb-6 pt-4">
           <div className="border-t border-white/10 pt-5 flex flex-col gap-3">
             <span className="text-[10px] font-black uppercase tracking-widest text-white/40 mb-1">
-              Susisiekite
+              {t.nav.susisiekite}
             </span>
             <a href="tel:+37067767287" className="flex items-center gap-3 text-white/90 hover:text-[#16AFD1] transition-colors">
               <Phone size={16} className="text-[#16AFD1]" />

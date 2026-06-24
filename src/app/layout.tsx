@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/layout/navbar";
 import { Footer } from "@/components/layout/footer"; // Importuojame footerį
+import { LanguageProvider } from "@/lib/i18n/language-context";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,16 +31,18 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-white text-slate-900">
-        {/* Navigacija viršuje */}
-        <Navbar /> 
-        
-        {/* flex-1 užtikrina, kad turinys nustumtų footerį į patį puslapio galą */}
-        <main className="flex-1">
-          {children}
-        </main>
+        <LanguageProvider>
+          {/* Navigacija viršuje */}
+          <Navbar />
 
-        {/* Footeris, kuris dabar bus visuose puslapiuose */}
-        <Footer />
+          {/* flex-1 užtikrina, kad turinys nustumtų footerį į patį puslapio galą */}
+          <main className="flex-1">
+            {children}
+          </main>
+
+          {/* Footeris, kuris dabar bus visuose puslapiuose */}
+          <Footer />
+        </LanguageProvider>
       </body>
     </html>
   );

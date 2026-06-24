@@ -2,14 +2,13 @@
 import { motion } from "framer-motion";
 import { PackageSearch, Wrench, Snowflake, Zap, Anchor } from "lucide-react";
 import Link from "next/link";
+import { useLanguage } from "@/lib/i18n/language-context";
+
+const categoryIcons = [<Wrench size={28} key="0" />, <Snowflake size={28} key="1" />, <Zap size={28} key="2" />, <Anchor size={28} key="3" />];
 
 export default function Katalogas() {
-  const categories = [
-    { icon: <Wrench size={28} />, title: "Variklių dalys" },
-    { icon: <Snowflake size={28} />, title: "Šaldymo įranga" },
-    { icon: <Zap size={28} />, title: "Elektros komponentai" },
-    { icon: <Anchor size={28} />, title: "Korpuso ir denio dalys" },
-  ];
+  const { t } = useLanguage();
+  const categories = t.katalogas.categories.map((title, i) => ({ icon: categoryIcons[i], title }));
 
   return (
     <main className="w-full min-h-screen bg-slate-50 pt-[120px] pb-20 font-sans">
@@ -20,10 +19,10 @@ export default function Katalogas() {
               <PackageSearch className="text-[#16AFD1]" size={40} />
             </div>
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 mb-4">
-              Dalių <span className="text-[#16AFD1]">katalogas</span>
+              {t.katalogas.heroTitlePrefix} <span className="text-[#16AFD1]">{t.katalogas.heroTitleHighlight}</span>
             </h1>
             <p className="text-slate-500 max-w-xl mx-auto leading-relaxed">
-              Šiuo metu ruošiame pilną variklių ir laivų dalių katalogą su tiesiogine paieška ir užsakymu internetu.
+              {t.katalogas.heroDesc}
             </p>
           </motion.div>
         </div>
@@ -44,15 +43,15 @@ export default function Katalogas() {
         </div>
 
         <div className="bg-[#0C5588] text-white p-10 rounded-xl shadow-xl text-center">
-          <h2 className="text-xl font-black uppercase mb-3">Reikia konkrečios dalies dabar?</h2>
+          <h2 className="text-xl font-black uppercase mb-3">{t.katalogas.ctaTitle}</h2>
           <p className="text-slate-200 text-sm leading-relaxed mb-6 max-w-md mx-auto">
-            Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.
+            {t.katalogas.ctaDesc}
           </p>
           <Link
             href="/kontaktai"
             className="inline-block bg-white text-[#0C5588] px-8 py-3 rounded-md font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all"
           >
-            Susisiekite su mumis
+            {t.katalogas.ctaButton}
           </Link>
         </div>
       </div>

@@ -1,25 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { ShieldCheck, Database, Truck, UserCircle } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
+
+const sectionIcons = [<Database className="text-[#16AFD1]" size={24} key="0" />, <Truck className="text-[#16AFD1]" size={24} key="1" />, <UserCircle className="text-[#16AFD1]" size={24} key="2" />];
 
 export default function Privatumas() {
-  const sections = [
-    {
-      icon: <Database className="text-[#16AFD1]" size={24} />,
-      title: "Tvarkomi duomenys",
-      text: "Pirkimo tikslais tvarkome: vardą, pavardę, pristatymo adresą, telefono numerį, el. pašto adresą bei techninius duomenis (IP adresą)."
-    },
-    {
-      icon: <Truck className="text-[#16AFD1]" size={24} />,
-      title: "Duomenų perdavimas",
-      text: "Jūsų duomenis perduodame tik būtiniems partneriams: kurjeriams (DPD, DHL, LP Express) siuntos pristatymui ir mokėjimo operatoriams (Stripe/Paysera) saugiam atsiskaitymui."
-    },
-    {
-      icon: <UserCircle className="text-[#16AFD1]" size={24} />,
-      title: "Jūsų teisės",
-      text: "Jūs turite teisę reikalauti ištrinti jūsų duomenis, susipažinti su jais arba nesutikti su jų tvarkymu, kreipdamiesi el. paštu info@marinetech.lt."
-    }
-  ];
+  const { t } = useLanguage();
+  const sections = t.privatumas.sections.map((s, i) => ({ ...s, icon: sectionIcons[i] }));
 
   return (
     <main className="w-full min-h-screen bg-slate-50 pt-[120px] pb-20 font-sans">
@@ -28,14 +16,14 @@ export default function Privatumas() {
         <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border-b-4 border-[#16AFD1] mb-12">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 mb-6">
-              Privatumo <span className="text-[#16AFD1]">politika</span>
+              {t.privatumas.titlePrefix} <span className="text-[#16AFD1]">{t.privatumas.titleHighlight}</span>
             </h1>
             <div className="flex flex-wrap gap-y-2 gap-x-6 text-sm font-bold text-slate-400 uppercase tracking-widest">
               <span>UAB „Marinetechas“</span>
               <span>Į.k: 304064996</span>
               <span>PVM: LT100010805312</span>
             </div>
-            <p className="mt-4 text-slate-500 italic">Klauso Malūno g. 1, Klaipėda</p>
+            <p className="mt-4 text-slate-500 italic">{t.privatumas.address}</p>
           </motion.div>
         </div>
 
@@ -59,7 +47,7 @@ export default function Privatumas() {
         </div>
 
         <footer className="mt-12 text-center text-slate-400 text-xs uppercase tracking-[0.2em] font-bold">
-          Paskutinį kartą atnaujinta: 2026-04-19
+          {t.privatumas.lastUpdated}
         </footer>
       </div>
     </main>

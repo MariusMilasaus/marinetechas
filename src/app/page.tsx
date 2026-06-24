@@ -5,20 +5,24 @@ import { useRef } from "react";
 import Link from "next/link";
 // Techninės ikonos be italic prieskonių
 import { Clock, HardHat, Globe, Zap } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
 
 export default function Home() {
   const containerRef = useRef(null);
-  
+  const { t } = useLanguage();
+
   const { scrollYProgress } = useScroll({
     target: containerRef,
     offset: ["start end", "end start"]
   });
 
-  const reasons = [
-    { value: "10+", text: "Metų patirties", icon: <Clock size={18} /> },
-    { value: "500+", text: "Atliktų projektų", icon: <HardHat size={18} /> },
-    { value: "20+", text: "Aptarnaujamų šalių", icon: <Globe size={18} /> },
-    { value: "24/7", text: "Pasiekiamumas", icon: <Zap size={18} /> }
+  const reasonIcons = [<Clock size={18} key="0" />, <HardHat size={18} key="1" />, <Globe size={18} key="2" />, <Zap size={18} key="3" />];
+  const reasons = t.home.reasons.map((item, i) => ({ ...item, icon: reasonIcons[i] }));
+
+  const serviceCards = [
+    { ...t.home.services[0], img: "/4.png", href: "/paslaugos" },
+    { ...t.home.services[1], img: "/3.png", href: "/paslaugos" },
+    { ...t.home.services[2], img: "/2.png", href: "/paslaugos" },
   ];
 
   const brands = [
@@ -58,19 +62,19 @@ export default function Home() {
               className="max-w-xl text-left text-white"
             >
               <span className="block text-[#16AFD1] font-bold uppercase tracking-widest text-xs md:text-sm mb-3 drop-shadow-[0_1px_4px_rgba(0,0,0,0.8)]">
-                UAB Marinetechas · Nuo 2015 m.
+                {t.home.heroLabel}
               </span>
               <h1 className="text-2xl md:text-4xl font-semibold leading-snug drop-shadow-lg mb-3">
-                Patikimi inžineriniai sprendimai pramonei ir laivynui
+                {t.home.heroTitle}
               </h1>
               <p className="text-base md:text-xl text-white/80 font-medium mb-6">
-                Greitai. Patikimai. Visame pasaulyje.
+                {t.home.heroSubtitle}
               </p>
               <Link
                 href="/kontaktai"
                 className="inline-block bg-white text-[#0C5588] px-8 py-3 rounded-md font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all"
               >
-                Gauti pasiūlymą
+                {t.home.heroButton}
               </Link>
             </motion.div>
           </div>
@@ -82,11 +86,11 @@ export default function Home() {
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <div className="text-left">
             <h2 className="text-4xl font-black mb-8 uppercase tracking-tighter">
-              Sveiki atvykę į <span className="text-[#0C5588]">Marine</span><span className="text-[#16AFD1]">TECH</span>
+              {t.home.welcomePrefix} <span className="text-[#0C5588]">Marine</span><span className="text-[#16AFD1]">TECH</span>
             </h2>
             <div className="text-slate-600 leading-relaxed space-y-6 text-lg font-medium">
-              <p>UAB „Marinetechas“ įkurta 2015 m. Sėkmingai dirbame laivų remonto srityje ir pramonės sektoriuje, nuolat plėsdami savo paslaugų spektrą ir diegdami pažangiausias technologijas.</p>
-              <p>Mūsų specialistai pasiruošę atvykti į bet kurią pasaulio vietą ir atlikti visus reikalingus remonto bei aptarnavimo darbus. Mums svarbus kiekvienas užsakovas, todėl garantuojame kokybę ir greitą darbų atlikimą.</p>
+              <p>{t.home.aboutParagraph1}</p>
+              <p>{t.home.aboutParagraph2}</p>
             </div>
           </div>
 
@@ -123,11 +127,7 @@ export default function Home() {
       {/* TRYS PAGRINDINĖS SRITYS */}
       <section className="max-w-7xl mx-auto pb-10 px-6">
         <div className="grid md:grid-cols-3 gap-8">
-          {[
-            { title: "Laivų remontas", desc: "Korpuso, variklių ir denio įrangos remontas bei techninis aptarnavimas visame pasaulyje.", img: "/4.png", href: "/paslaugos" },
-            { title: "Šaldymo įranga", desc: "Laivų šaldymo sistemų montavimas, remontas ir periodinė priežiūra.", img: "/3.png", href: "/paslaugos" },
-            { title: "Variklių ir jų dalių tiekimas", desc: "Originalių ir suderinamų variklio dalių paieška bei greitas tiekimas.", img: "/2.png", href: "/paslaugos" }
-          ].map((item, idx) => (
+          {serviceCards.map((item, idx) => (
             <Link href={item.href} key={idx}>
               <motion.div whileHover={{ y: -10 }} className="group cursor-pointer">
                 <div className="relative h-64 overflow-hidden mb-4 rounded-xl border-b-8 border-[#0C5588] group-hover:border-[#16AFD1] shadow-xl group-hover:shadow-2xl transition-all duration-500">
@@ -169,10 +169,10 @@ export default function Home() {
       <section className="max-w-7xl mx-auto px-6 py-10 pb-20">
         <div className="bg-[#0C5588] rounded-xl p-10 md:p-14 text-center relative overflow-hidden text-white">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-8">
-            Pasiruošę pradėti <span className="text-[#16AFD1]">bendradarbiavimą?</span>
+            {t.home.ctaTitlePrefix} <span className="text-[#16AFD1]">{t.home.ctaTitleHighlight}</span>
           </h2>
           <Link href="/kontaktai" className="inline-block bg-white text-[#0C5588] px-10 py-4 rounded-md font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all">
-            Gauti pasiūlymą
+            {t.home.ctaButton}
           </Link>
         </div>
       </section>

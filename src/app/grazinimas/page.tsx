@@ -1,25 +1,13 @@
 "use client";
 import { motion } from "framer-motion";
 import { RotateCcw, AlertOctagon, ClipboardCheck, Ban, Truck } from "lucide-react";
+import { useLanguage } from "@/lib/i18n/language-context";
+
+const stepIcons = [<ClipboardCheck className="text-[#16AFD1]" key="0" />, <Truck className="text-[#16AFD1]" key="1" />, <RotateCcw className="text-[#16AFD1]" key="2" />];
 
 export default function Grazinimas() {
-  const steps = [
-    {
-      icon: <ClipboardCheck className="text-[#16AFD1]" />,
-      title: "1. Patikra",
-      text: "Grąžinama prekė privalo būti originalioje, švarioje pakuotėje. Mes nepriimame detalių su montavimo žymėmis, tepalų pėdsakais ar pažeistais korpusais."
-    },
-    {
-      icon: <Truck className="text-[#16AFD1]" />,
-      title: "2. Siuntimas",
-      text: "Už prekių grąžinimo transporto išlaidas atsakingas Pirkėjas. Rekomenduojame siuntas drausti, nes mes neatsakome už tranzito metu prarastas prekes."
-    },
-    {
-      icon: <RotateCcw className="text-[#16AFD1]" />,
-      title: "3. Pinigų grąžinimas",
-      text: "Pinigai grąžinami per 14 dienų po to, kai mūsų techninis skyrius patvirtina, kad detalė yra tinkama pakartotiniam pardavimui."
-    }
-  ];
+  const { t } = useLanguage();
+  const steps = t.grazinimas.steps.map((s, i) => ({ ...s, icon: stepIcons[i] }));
 
   return (
     <main className="w-full min-h-screen bg-slate-50 pt-[120px] pb-20 font-sans">
@@ -29,9 +17,9 @@ export default function Grazinimas() {
         <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border-b-4 border-orange-600 mb-8 relative overflow-hidden">
           <div className="relative z-10">
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 mb-4">
-              Prekių <span className="text-orange-600">Grąžinimas</span>
+              {t.grazinimas.titlePrefix} <span className="text-orange-600">{t.grazinimas.titleHighlight}</span>
             </h1>
-            <p className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">UAB „Marinetechas“ • Kokybės kontrolė</p>
+            <p className="text-slate-500 font-bold text-xs uppercase tracking-[0.2em]">{t.grazinimas.subtitle}</p>
           </div>
           <RotateCcw className="absolute right-[-20px] bottom-[-20px] text-slate-50 opacity-[0.05]" size={200} />
         </div>
@@ -42,9 +30,9 @@ export default function Grazinimas() {
             <Ban size={32} />
           </div>
           <div>
-            <h2 className="text-xl font-black uppercase text-orange-900 mb-2 italic">Negrąžinamos prekės</h2>
+            <h2 className="text-xl font-black uppercase text-orange-900 mb-2 italic">{t.grazinimas.alertTitle}</h2>
             <p className="text-orange-800 text-sm leading-relaxed">
-              Pagal LR įstatymus ir <strong>UAB „Marinetechas“</strong> taisykles, detalės, kurios buvo užsakytos specialiai pagal pirkėjo pateiktą laivo variklio serijos numerį (užsakomosios prekės), <strong>nėra grąžinamos ir nekeičiamos.</strong>
+              {t.grazinimas.alertTextBefore} <strong>{t.grazinimas.alertTextCompanyBold}</strong> {t.grazinimas.alertTextMiddle} <strong>{t.grazinimas.alertTextBold2}</strong>
             </p>
           </div>
         </div>
@@ -73,24 +61,18 @@ export default function Grazinimas() {
           <div className="flex items-start gap-6">
             <AlertOctagon className="text-orange-500 shrink-0" size={32} />
             <div className="space-y-6">
-              <h2 className="text-2xl font-black uppercase tracking-tight">Esminiai reikalavimai</h2>
+              <h2 className="text-2xl font-black uppercase tracking-tight">{t.grazinimas.requirementsTitle}</h2>
               <ul className="space-y-4 text-slate-300 text-sm">
-                <li className="flex gap-3 items-start italic">
-                  <span className="text-orange-500 font-bold">•</span>
-                  Prekė privalo būti nepraradusi prekinės išvaizdos (nepažeistos etiketės, nenuplėštos apsauginės plėvelės).
-                </li>
-                <li className="flex gap-3 items-start italic">
-                  <span className="text-orange-500 font-bold">•</span>
-                  Elektronikos dalys (valdymo blokai, davikliai) grąžinimui nepriimamos, jei buvo atidaryta gamyklinė pakuotė.
-                </li>
-                <li className="flex gap-3 items-start italic">
-                  <span className="text-orange-500 font-bold">•</span>
-                  Kartu su preke privaloma pateikti pirkimo sąskaitą-faktūrą.
-                </li>
+                {t.grazinimas.requirementsList.map((req, i) => (
+                  <li key={i} className="flex gap-3 items-start italic">
+                    <span className="text-orange-500 font-bold">•</span>
+                    {req}
+                  </li>
+                ))}
               </ul>
               <div className="pt-6 border-t border-slate-700">
                 <p className="text-xs font-bold uppercase tracking-widest text-slate-500 italic">
-                  Turite klausimų? info@marinetech.lt
+                  {t.grazinimas.contactLine}
                 </p>
               </div>
             </div>
