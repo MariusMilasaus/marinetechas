@@ -3,7 +3,7 @@ import Link from "next/link"; // Pridėtas Link importas
 
 export function Footer() {
   return (
-    <footer className="w-full bg-black/20 backdrop-blur-xl text-white pt-12 pb-6 border-t border-white/10 mt-auto">
+    <footer className="w-full bg-slate-950 text-white pt-12 pb-6 border-t-2 border-[#16AFD1] mt-auto">
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-b border-white/5 pb-8">
           
