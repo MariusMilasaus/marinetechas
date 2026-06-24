@@ -25,7 +25,7 @@ export default function Privatumas() {
     <main className="w-full min-h-screen bg-slate-50 pt-[120px] pb-20 font-sans">
       <div className="max-w-4xl mx-auto px-6">
         {/* HEADER */}
-        <div className="bg-white p-8 md:p-12 shadow-sm border-b-4 border-[#16AFD1] mb-12">
+        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border-b-4 border-[#16AFD1] mb-12">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 mb-6">
               Privatumo <span className="text-[#16AFD1]">politika</span>
@@ -47,7 +47,7 @@ export default function Privatumas() {
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 flex gap-6 items-start shadow-sm border-l-4 border-slate-200 hover:border-[#0C5588] transition-colors"
+              className="bg-white p-8 rounded-xl flex gap-6 items-start shadow-sm border-l-4 border-slate-200 hover:border-[#0C5588] transition-colors"
             >
               <div className="p-3 bg-slate-50 rounded-lg">{section.icon}</div>
               <div>

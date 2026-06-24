@@ -25,7 +25,7 @@ export default function Slapukai() {
       <div className="max-w-4xl mx-auto px-6">
         
         {/* HEADER */}
-        <div className="bg-white p-8 md:p-12 shadow-sm border-b-4 border-slate-900 mb-12">
+        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border-b-4 border-slate-900 mb-12">
           <div className="flex items-center gap-6">
             <div className="p-4 bg-slate-50 rounded-full">
               <Cookie size={40} className="text-[#0C5588]" />
@@ -40,7 +40,7 @@ export default function Slapukai() {
         </div>
 
         {/* APRAŠYMAS */}
-        <div className="bg-white p-8 shadow-sm mb-8 border-l-4 border-[#16AFD1]">
+        <div className="bg-white p-8 rounded-xl shadow-sm mb-8 border-l-4 border-[#16AFD1]">
           <h2 className="text-lg font-black uppercase mb-4 flex items-center gap-2">
             <Settings size={18} /> Kas yra slapukai?
           </h2>
@@ -56,7 +56,7 @@ export default function Slapukai() {
               key={idx}
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
-              className="bg-white shadow-sm overflow-hidden border border-slate-100"
+              className="bg-white shadow-sm overflow-hidden rounded-xl border border-slate-100"
             >
               <div className="p-6 border-b border-slate-50 bg-slate-50/50 flex items-center gap-4">
                 {type.icon}
@@ -65,7 +65,7 @@ export default function Slapukai() {
               <div className="p-6">
                 <p className="text-slate-600 text-sm mb-6">{type.desc}</p>
                 
-                <div className="bg-white border border-slate-100 rounded">
+                <div className="bg-white border border-slate-100 rounded-lg overflow-hidden">
                   <div className="grid grid-cols-2 bg-slate-50 p-2 text-[10px] font-black uppercase tracking-widest text-slate-400 border-b border-slate-100">
                     <span>Pavadinimas</span>
                     <span>Galiojimas</span>
@@ -83,7 +83,7 @@ export default function Slapukai() {
         </div>
 
         {/* VALDYMAS */}
-        <div className="mt-12 p-8 bg-[#0C5588] text-white shadow-xl">
+        <div className="mt-12 p-8 rounded-xl bg-[#0C5588] text-white shadow-xl">
           <h2 className="text-xl font-black uppercase mb-4">Kaip valdyti slapukus?</h2>
           <p className="text-blue-100 text-sm leading-relaxed mb-6">
             Dauguma naršyklių leidžia kontroliuoti slapukų nustatymus. Juos galite ištrinti arba blokuoti bet kuriuo metu. Tačiau atkreipiame dėmesį, kad išjungus būtinus slapukus, <strong>UAB „Marinetechas“</strong> elektroninės parduotuvės funkcijos (pvz., prekių užsakymas) gali nebeveikti.

@@ -26,7 +26,7 @@ export default function Grazinimas() {
       <div className="max-w-4xl mx-auto px-6">
         
         {/* HEADER BLOCK */}
-        <div className="bg-white p-8 md:p-12 shadow-sm border-b-4 border-orange-600 mb-8 relative overflow-hidden">
+        <div className="bg-white p-8 md:p-12 rounded-xl shadow-sm border-b-4 border-orange-600 mb-8 relative overflow-hidden">
           <div className="relative z-10">
             <h1 className="text-4xl md:text-5xl font-black uppercase tracking-tighter text-slate-900 mb-4">
               Prekių <span className="text-orange-600">Grąžinimas</span>
@@ -37,7 +37,7 @@ export default function Grazinimas() {
         </div>
 
         {/* CRITICAL ALERT SECTION */}
-        <div className="bg-orange-50 border-2 border-orange-200 p-8 mb-12 flex flex-col md:flex-row gap-6 items-center">
+        <div className="bg-orange-50 border-2 border-orange-200 p-8 mb-12 rounded-xl flex flex-col md:flex-row gap-6 items-center">
           <div className="bg-orange-600 p-4 rounded-full text-white">
             <Ban size={32} />
           </div>
@@ -57,7 +57,7 @@ export default function Grazinimas() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: idx * 0.1 }}
-              className="bg-white p-8 shadow-sm border-t-4 border-slate-100 flex flex-col items-center text-center group hover:border-[#16AFD1] transition-all"
+              className="bg-white p-8 rounded-xl shadow-sm border-t-4 border-slate-100 flex flex-col items-center text-center group hover:border-[#16AFD1] transition-all"
             >
               <div className="mb-6 p-4 bg-slate-50 rounded-full group-hover:bg-[#16AFD1]/10 transition-colors">
                 {step.icon}
@@ -69,7 +69,7 @@ export default function Grazinimas() {
         </div>
 
         {/* FORMAL REQUIREMENTS */}
-        <div className="bg-slate-900 text-white p-10 shadow-2xl relative">
+        <div className="bg-[#0C5588] text-white p-10 rounded-xl shadow-2xl relative">
           <div className="flex items-start gap-6">
             <AlertOctagon className="text-orange-500 shrink-0" size={32} />
             <div className="space-y-6">

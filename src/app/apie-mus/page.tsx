@@ -6,18 +6,18 @@ export default function ApieMus() {
       
       {/* 1. HERO SEKCIJA (Kaip Smedegaarden pavyzdyje) */}
       <section className="relative h-[60vh] min-h-[400px] w-full flex items-center justify-center">
-        <img 
-          src="https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?q=80&w=2000" 
+        <img
+          src="/marine-industry.png"
           className="absolute inset-0 w-full h-full object-cover grayscale"
           alt="Engineering"
         />
         <div className="absolute inset-0 bg-slate-900/60"></div>
-        
+
         <div className="relative z-10 text-center max-w-4xl px-6">
           <h1 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-none">
-            Patirtis. Tikslumas. <span className="text-[#3BB8D1]">Kokybė.</span>
+            Patirtis. Tikslumas. <span className="text-[#16AFD1]">Kokybė.</span>
           </h1>
-          <div className="w-24 h-1 bg-[#3BB8D1] mx-auto mb-8"></div>
+          <div className="w-24 h-1 bg-[#16AFD1] mx-auto mb-8"></div>
           <p className="text-slate-200 text-lg md:text-xl font-medium uppercase tracking-widest">
             Profesionalūs inžineriniai sprendimai laivynui ir pramonei
           </p>
@@ -28,7 +28,7 @@ export default function ApieMus() {
       <section className="max-w-7xl mx-auto px-6 md:px-12 py-24 grid lg:grid-cols-2 gap-20 items-start">
         <div className="space-y-8">
           <div className="space-y-4">
-            <h2 className="text-sm font-black text-[#3BB8D1] uppercase tracking-[0.3em]">Mūsų istorija</h2>
+            <h2 className="text-sm font-black text-[#16AFD1] uppercase tracking-[0.3em]">Mūsų istorija</h2>
             <h3 className="text-3xl font-extrabold text-slate-900 uppercase italic leading-tight">
               UAB „Marinetechas“ – Stabilus partneris laivų remonto srityje.
             </h3>
@@ -55,7 +55,7 @@ export default function ApieMus() {
                 "Konkurencinga kaina už aukščiausios klasės servisą."
               ].map((point, i) => (
                 <li key={i} className="flex items-center gap-4 text-slate-800 font-bold text-sm uppercase">
-                  <div className="bg-[#3BB8D1] p-1 rounded-sm">
+                  <div className="bg-[#16AFD1] p-1 rounded-md">
                     <Check size={14} className="text-white" />
                   </div>
                   {point}
@@ -67,23 +67,23 @@ export default function ApieMus() {
 
         {/* 3. VERTYBIŲ KORTELĖS */}
         <div className="grid sm:grid-cols-2 gap-6">
-          <div className="p-8 border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
-            <Settings className="text-[#3BB8D1]" size={32} />
+          <div className="p-8 rounded-xl border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
+            <Settings className="text-[#16AFD1]" size={32} />
             <h4 className="font-black uppercase text-sm italic">Inžinerija</h4>
             <p className="text-xs text-slate-500 leading-relaxed uppercase tracking-wider">Pažangiausių technologijų naudojimas remonto procesuose.</p>
           </div>
-          <div className="p-8 border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
-            <Anchor className="text-[#3BB8D1]" size={32} />
+          <div className="p-8 rounded-xl border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
+            <Anchor className="text-[#16AFD1]" size={32} />
             <h4 className="font-black uppercase text-sm italic">Logistika</h4>
             <p className="text-xs text-slate-500 leading-relaxed uppercase tracking-wider">Sklandus detalių tiekimas ir servisas bet kuriame uoste.</p>
           </div>
-          <div className="p-8 border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
-            <ShieldCheck className="text-[#3BB8D1]" size={32} />
+          <div className="p-8 rounded-xl border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
+            <ShieldCheck className="text-[#16AFD1]" size={32} />
             <h4 className="font-black uppercase text-sm italic">Saugumas</h4>
             <p className="text-xs text-slate-500 leading-relaxed uppercase tracking-wider">Aukščiausių darbų saugos standartų laikymasis.</p>
           </div>
-          <div className="p-8 border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
-            <Globe className="text-[#3BB8D1]" size={32} />
+          <div className="p-8 rounded-xl border border-slate-100 bg-slate-50/50 flex flex-col items-start gap-4 hover:shadow-xl transition">
+            <Globe className="text-[#16AFD1]" size={32} />
             <h4 className="font-black uppercase text-sm italic">Pasiekiamumas</h4>
             <p className="text-xs text-slate-500 leading-relaxed uppercase tracking-wider">Mobilūs inžinieriai pasiekiami 24 valandas per parą.</p>
           </div>
@@ -95,8 +95,8 @@ export default function ApieMus() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 grid lg:grid-cols-2 gap-16 relative z-10">
           <div className="space-y-8">
             <div className="flex items-center gap-4">
-              <Target className="text-[#3BB8D1]" size={40} />
-              <h3 className="text-3xl font-black uppercase italic italic">Misija</h3>
+              <Target className="text-[#16AFD1]" size={40} />
+              <h3 className="text-3xl font-black uppercase italic">Misija</h3>
             </div>
             <p className="text-slate-300 text-xl font-light leading-relaxed">
               Siekti aukštos pozicijos pirmaujančių remonto paslaugų įmonių sąraše, teikiant savo užsakovams 
@@ -105,8 +105,8 @@ export default function ApieMus() {
           </div>
           <div className="space-y-8">
             <div className="flex items-center gap-4">
-              <Eye className="text-[#3BB8D1]" size={40} />
-              <h3 className="text-3xl font-black uppercase italic italic">Vizija</h3>
+              <Eye className="text-[#16AFD1]" size={40} />
+              <h3 className="text-3xl font-black uppercase italic">Vizija</h3>
             </div>
             <p className="text-slate-300 text-xl font-light leading-relaxed">
               Tapti tarp lyderių remonto, tiekimo ir aptarnavimo srityje, naudojant <span className="text-white font-bold tracking-tight">pažangiausias ir efektyviausias technologijas.</span>

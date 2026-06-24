@@ -22,10 +22,10 @@ export const Navbar = () => {
 
         {/* PAGRINDINIS MENIU */}
         <nav className="hidden lg:flex items-center gap-10 text-[12px] font-black tracking-[0.2em] text-white uppercase">
-          <Link href="/apie-mus" className="hover:text-[#3BB8D1] transition-colors">Apie mus</Link>
-          <Link href="/paslaugos" className="hover:text-[#3BB8D1] transition-colors">Paslaugos</Link>
-  <Link href="/katalogas" className="hover:text-[#3BB8D1] transition-colors">Katalogas</Link>
-  <Link href="/kontaktai" className="hover:text-[#3BB8D1] transition-colors">Kontaktai</Link>
+          <Link href="/apie-mus" className="hover:text-[#16AFD1] transition-colors">Apie mus</Link>
+          <Link href="/paslaugos" className="hover:text-[#16AFD1] transition-colors">Paslaugos</Link>
+  <Link href="/katalogas" className="hover:text-[#16AFD1] transition-colors">Katalogas</Link>
+  <Link href="/kontaktai" className="hover:text-[#16AFD1] transition-colors">Kontaktai</Link>
         </nav>
 
         {/* DEŠINĖ PUSĖ */}
@@ -58,17 +58,17 @@ export const Navbar = () => {
 
           {/* IKONOS */}
           <div className="flex items-center gap-1">
-            <button className="p-2 text-white hover:text-[#3BB8D1] transition-colors">
+            <button className="p-2 text-white hover:text-[#16AFD1] transition-colors">
               <Search size={25} strokeWidth={2.5} />
             </button>
-            <button className="p-2 text-white hover:text-[#3BB8D1] transition-colors relative">
+            <button className="p-2 text-white hover:text-[#16AFD1] transition-colors relative">
               <ShoppingCart size={25} strokeWidth={2.5} />
-              <span className="absolute top-1 right-1 h-3.5 w-3.5 bg-[#3BB8D1] text-[9px] text-black rounded-full flex items-center justify-center font-[900]">0</span>
+              <span className="absolute top-1 right-1 h-3.5 w-3.5 bg-[#16AFD1] text-[9px] text-black rounded-full flex items-center justify-center font-[900]">0</span>
             </button>
           </div>
 
           {/* MYGTUKAS */}
-          <Button className="hidden md:flex bg-[#3BB8D1] hover:bg-white text-black font-[900] uppercase italic text-[11px] tracking-widest px-8 rounded-10px transition-all border-none">
+          <Button className="hidden md:flex bg-[#16AFD1] hover:bg-white text-black font-[900] uppercase italic text-[11px] tracking-widest px-8 rounded-10px transition-all border-none">
             <span className="skew-x-[15deg]">E-Parduotuvė
             </span>
           </Button>

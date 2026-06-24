@@ -61,19 +61,19 @@ export default function Paslaugos() {
       
       {/* HERO SEKCIJA */}
       <section className="relative h-[50vh] min-h-[400px] w-full flex items-center justify-center">
-        <img 
-          src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?q=80&w=2000" 
+        <img
+          src="/marine-industry.png"
           className="absolute inset-0 w-full h-full object-cover grayscale"
           alt="Technical Services"
         />
         <div className="absolute inset-0 bg-slate-900/75"></div>
-        
+
         <div className="relative z-10 text-center max-w-4xl px-6">
-          <h4 className="text-[#3BB8D1] font-black uppercase tracking-[0.4em] mb-4 text-sm">Profesionalus Servisas</h4>
+          <h4 className="text-[#16AFD1] font-black uppercase tracking-[0.4em] mb-4 text-sm">Profesionalus Servisas</h4>
           <h1 className="text-white text-4xl md:text-6xl font-black uppercase tracking-tighter mb-6 leading-none">
-            Mūsų <span className="text-[#3BB8D1]">Ekspertizė</span>
+            Mūsų <span className="text-[#16AFD1]">Ekspertizė</span>
           </h1>
-          <div className="w-24 h-1 bg-[#3BB8D1] mx-auto"></div>
+          <div className="w-24 h-1 bg-[#16AFD1] mx-auto"></div>
         </div>
       </section>
 
@@ -83,7 +83,7 @@ export default function Paslaugos() {
           {serviceGroups.map((group, index) => (
             <div 
               key={index} 
-              className="group relative p-8 md:p-12 border border-slate-100 overflow-hidden min-h-[400px] flex flex-col justify-end transition-all duration-500"
+              className="group relative p-8 md:p-12 rounded-xl border border-slate-100 overflow-hidden min-h-[400px] flex flex-col justify-end transition-all duration-500"
             >
               {/* NUOTRAUKOS FONAS */}
               <img 
@@ -94,9 +94,9 @@ export default function Paslaugos() {
               
               <div className="relative z-10 space-y-6">
                 <div className="flex items-center gap-6">
-                  <div className="bg-white p-5 shadow-sm border border-slate-100 group-hover:bg-[#3BB8D1] group-hover:text-white transition-colors duration-500">
+                  <div className="bg-white p-5 rounded-lg shadow-sm border border-slate-100 group-hover:bg-[#16AFD1] group-hover:text-white transition-colors duration-500">
                     {/* Ikona dabar prisitaiko prie fono spalvos hover metu */}
-                    <div className="text-[#3BB8D1] group-hover:text-white transition-colors">
+                    <div className="text-[#16AFD1] group-hover:text-white transition-colors">
                       {group.icon}
                     </div>
                   </div>
@@ -112,7 +112,7 @@ export default function Paslaugos() {
                 <ul className="grid sm:grid-cols-1 gap-3">
                   {group.items.map((item, i) => (
                     <li key={i} className="flex items-start gap-3 text-slate-800 font-bold text-[11px] uppercase tracking-wide">
-                      <Check size={14} className="text-[#3BB8D1] mt-0.5 flex-shrink-0" />
+                      <Check size={14} className="text-[#16AFD1] mt-0.5 flex-shrink-0" />
                       <span>{item}</span>
                     </li>
                   ))}
@@ -135,7 +135,7 @@ export default function Paslaugos() {
           <div className="pt-4">
             <Link 
               href="/kontaktai" 
-              className="bg-[#3BB8D1] text-white px-10 py-4 font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-[#0C5588] transition-all inline-block"
+              className="bg-[#16AFD1] text-white px-10 py-4 rounded-md font-black uppercase tracking-[0.2em] text-sm hover:bg-white hover:text-[#0C5588] transition-all inline-block"
             >
               Susisiekite su mumis
             </Link>

@@ -40,7 +40,7 @@ export default function Kontaktai() {
                 { icon: <MapPin className="text-[#16AFD1]" />, label: "Adresas", value: "Klauso Malūno g. 1, Klaipėda" }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-6 group">
-                  <div className="p-4 bg-slate-50 group-hover:bg-[#16AFD1] group-hover:text-white transition-colors duration-300 shadow-sm">
+                  <div className="p-4 rounded-lg bg-slate-50 group-hover:bg-[#16AFD1] group-hover:text-white transition-colors duration-300 shadow-sm">
                     {item.icon}
                   </div>
                   <div>
@@ -58,7 +58,7 @@ export default function Kontaktai() {
   initial={{ x: 30, opacity: 0 }}
   animate={{ x: 0, opacity: 1 }}
   transition={{ delay: 0.3 }}
-  className="bg-slate-50 p-8 md:p-12 shadow-2xl border-t-8 border-[#0C5588] md:-mt-30 z-10 relative"
+  className="bg-slate-50 p-8 md:p-12 rounded-xl shadow-2xl border-t-8 border-[#0C5588] md:-mt-30 z-10 relative"
 >
             <form className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
@@ -67,22 +67,22 @@ export default function Kontaktai() {
                   <input 
                     type="text" 
                     placeholder="Jonas Jonaitis"
-                    className="w-full p-4 bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
+                    className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
                   />
                 </div>
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-500">El. paštas</label>
-                  <input 
-                    type="email" 
+                  <input
+                    type="email"
                     placeholder="jonas@imone.lt"
-                    className="w-full p-4 bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
+                    className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
                   />
                 </div>
               </div>
 
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-slate-500">Tema</label>
-                <select className="w-full p-4 bg-white border border-slate-200 focus:border-[#16AFD1] outline-none transition-all font-medium text-slate-900">
+                <select className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] outline-none transition-all font-medium text-slate-900">
                   <option>Laivų remontas</option>
                   <option>Šaldymo įranga</option>
                   <option>Dalių tiekimas</option>
@@ -95,13 +95,13 @@ export default function Kontaktai() {
                 <textarea 
                   rows={5} 
                   placeholder="Aprašykite savo poreikį..."
-                  className="w-full p-4 bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900 resize-none"
+                  className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900 resize-none"
                 ></textarea>
               </div>
 
               <button 
                 type="submit"
-                className="w-full bg-[#0C5588] hover:bg-[#16AFD1] text-white py-5 px-10 font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-300 shadow-lg group"
+                className="w-full bg-[#0C5588] hover:bg-[#16AFD1] text-white py-5 px-10 rounded-md font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-300 shadow-lg group"
               >
                 <span>Siųsti užklausą</span>
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
