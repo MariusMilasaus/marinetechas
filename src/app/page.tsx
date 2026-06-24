@@ -68,7 +68,7 @@ export default function Home() {
               </p>
               <Link
                 href="/kontaktai"
-                className="inline-block bg-white text-[#0C5588] px-8 py-3 font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all"
+                className="inline-block bg-white text-[#0C5588] px-8 py-3 rounded-md font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all"
               >
                 Gauti pasiūlymą
               </Link>
@@ -130,7 +130,7 @@ export default function Home() {
           ].map((item, idx) => (
             <Link href={item.href} key={idx}>
               <motion.div whileHover={{ y: -10 }} className="group cursor-pointer">
-                <div className="relative h-64 overflow-hidden mb-4 border-b-8 border-[#0C5588] group-hover:border-[#16AFD1] shadow-xl group-hover:shadow-2xl transition-all duration-500">
+                <div className="relative h-64 overflow-hidden mb-4 rounded-xl border-b-8 border-[#0C5588] group-hover:border-[#16AFD1] shadow-xl group-hover:shadow-2xl transition-all duration-500">
                   <img src={item.img} className="w-full h-full object-cover group-hover:scale-110 transition duration-700" alt={item.title}/>
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent group-hover:from-[#0C5588]/90 transition duration-500" />
                   <div className="absolute bottom-6 left-6 right-6">
@@ -167,11 +167,11 @@ export default function Home() {
 
       {/* CTA PABAIGOJE */}
       <section className="max-w-7xl mx-auto px-6 py-10 pb-20">
-        <div className="bg-[#0C5588] p-10 md:p-14 text-center relative overflow-hidden text-white">
+        <div className="bg-[#0C5588] rounded-xl p-10 md:p-14 text-center relative overflow-hidden text-white">
           <h2 className="text-3xl md:text-5xl font-black uppercase tracking-tighter leading-none mb-8">
             Pasiruošę pradėti <span className="text-[#16AFD1]">bendradarbiavimą?</span>
           </h2>
-          <Link href="/kontaktai" className="bg-white text-[#0C5588] px-10 py-4 font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all">
+          <Link href="/kontaktai" className="inline-block bg-white text-[#0C5588] px-10 py-4 rounded-md font-black uppercase tracking-widest text-sm hover:bg-[#16AFD1] hover:text-white transition-all">
             Gauti pasiūlymą
           </Link>
         </div>
