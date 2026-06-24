@@ -35,9 +35,21 @@ export default function Kontaktai() {
 
             <div className="space-y-8">
               {[
-                { icon: <Phone className="text-[#16AFD1]" />, label: "Telefonas", value: "+370 677 67287" },
-                { icon: <Mail className="text-[#16AFD1]" />, label: "El. paštas", value: "info@marinetech.lt" },
-                { icon: <MapPin className="text-[#16AFD1]" />, label: "Adresas", value: "Klauso Malūno g. 1, Klaipėda" }
+                {
+                  icon: <Phone className="text-[#16AFD1]" />,
+                  label: "Telefonas",
+                  values: ["+370 677 67287", "+370 601 55938", "+370 615 47157"]
+                },
+                {
+                  icon: <Mail className="text-[#16AFD1]" />,
+                  label: "El. paštas",
+                  values: ["office@marinetech.lt", "info@marinetech.lt"]
+                },
+                {
+                  icon: <MapPin className="text-[#16AFD1]" />,
+                  label: "Adresas",
+                  values: ["Klauso Malūno g. 1, Klaipėda"]
+                }
               ].map((item, idx) => (
                 <div key={idx} className="flex items-start gap-6 group">
                   <div className="p-4 rounded-lg bg-slate-50 group-hover:bg-[#16AFD1] group-hover:text-white transition-colors duration-300 shadow-sm">
@@ -45,10 +57,17 @@ export default function Kontaktai() {
                   </div>
                   <div>
                     <h3 className="text-xs font-black uppercase tracking-widest text-slate-400 mb-1">{item.label}</h3>
-                    <p className="text-xl font-bold text-slate-800">{item.value}</p>
+                    {item.values.map((v, i) => (
+                      <p key={i} className="text-xl font-bold text-slate-800 leading-tight">{v}</p>
+                    ))}
                   </div>
                 </div>
               ))}
+            </div>
+
+            <div className="flex flex-wrap gap-x-6 gap-y-2 text-xs font-bold text-slate-400 uppercase tracking-widest pt-4 border-t border-slate-100">
+              <span>Į.k: 304064996</span>
+              <span>PVM: LT100010805312</span>
             </div>
           </motion.div>
 
@@ -110,6 +129,23 @@ export default function Kontaktai() {
           </motion.div>
 
         </div>
+
+        {/* ŽEMĖLAPIS */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          className="mt-16 rounded-xl overflow-hidden shadow-xl border border-slate-100"
+        >
+          <iframe
+            title="UAB Marinetechas žemėlapis"
+            src="https://www.google.com/maps?q=Klauso+Mal%C5%ABno+g.+1,+Klaip%C4%97da&output=embed"
+            className="w-full h-[400px] border-0"
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+          />
+        </motion.div>
+
       </div>
     </main>
   );
