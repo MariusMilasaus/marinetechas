@@ -63,7 +63,7 @@ export default function Home() {
               <h1 className="text-2xl md:text-4xl font-semibold leading-snug drop-shadow-lg mb-3">
                 Patikimi inžineriniai sprendimai pramonei ir laivynui
               </h1>
-              <p className="text-sm md:text-base text-white/80 font-medium mb-6">
+              <p className="text-base md:text-xl text-white/80 font-medium mb-6">
                 Greitai. Patikimai. Visame pasaulyje.
               </p>
               <Link
