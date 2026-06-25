@@ -150,8 +150,8 @@ export const translations = {
           description: "Telferis su 3 tonų keliamąja galia. Sijos ir bėgių matmenys — pasiteiraukite susisiekę. Kaina derinama individualiai.",
         },
         {
-          title: "Šmirgelis (dviejų ratų galandimo staklės)",
-          description: "Naudotas, veikiantis šmirgelis su dviem šlifavimo ratais. Tinka įrankiams galandinti. Kaina derinama individualiai.",
+          title: "Dviejų ratų galandimo staklės",
+          description: "Naudotos, veikiančios dviejų ratų galandimo staklės. Tinka įrankiams galandinti. Kaina derinama individualiai.",
         },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
