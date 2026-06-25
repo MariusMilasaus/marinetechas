@@ -133,6 +133,12 @@ export const translations = {
       skelbimaiDesc: "Mūsų naudota, tačiau veikianti įranga ir dalys — parduodame tai, kas mums jau nebereikalinga.",
       skelbimaiEmptyText: "Šiuo metu skelbimų nėra. Naujus skelbimus pridėsime greitai — sekite atnaujinimus.",
       skelbimaiContactButton: "Susisiekti",
+      listings: [
+        {
+          title: "Sandwich plokštės 80mm ir 120mm",
+          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kiekis ir kaina derinama individualiai.",
+        },
+      ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
       ctaDesc: "Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.",
       ctaButton: "Susisiekite su mumis",
@@ -355,6 +361,12 @@ export const translations = {
       skelbimaiDesc: "Our used but functional equipment and parts — we sell what we no longer need ourselves.",
       skelbimaiEmptyText: "There are no listings at the moment. New listings will be added soon — stay tuned.",
       skelbimaiContactButton: "Contact",
+      listings: [
+        {
+          title: "Sandwich panels 80mm and 120mm",
+          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Quantity and price negotiable.",
+        },
+      ],
       ctaTitle: "Need a specific part right now?",
       ctaDesc: "While the catalog is still being prepared, contact us directly — we'll provide price and availability within 24 hours.",
       ctaButton: "Contact us",
@@ -577,6 +589,12 @@ export const translations = {
       skelbimaiDesc: "Vårt brukte, men fullt funksjonelle utstyr og deler — vi selger det vi ikke lenger trenger selv.",
       skelbimaiEmptyText: "Det er ingen annonser for øyeblikket. Nye annonser legges til snart — følg med.",
       skelbimaiContactButton: "Kontakt",
+      listings: [
+        {
+          title: "Sandwichpaneler 80mm og 120mm",
+          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Mengde og pris etter avtale.",
+        },
+      ],
       ctaTitle: "Trenger du en spesifikk del nå?",
       ctaDesc: "Mens katalogen fortsatt er under utarbeidelse, kontakt oss direkte — vi gir deg pris og tilgjengelighet innen 24 timer.",
       ctaButton: "Kontakt oss",
