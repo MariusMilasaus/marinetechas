@@ -139,6 +139,10 @@ export const translations = {
           title: "Sandwich plokštės 80mm ir 120mm",
           description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kaina derinama individualiai.",
         },
+        {
+          title: "Kranas su telferiu, 5 t",
+          description: "Telferis su 5 tonų keliamąja galia. Krano sija — 10 m ilgio, 60 cm aukščio. Krano bėgiai — IPE profilis, 35 cm aukščio, 18 m ilgio. Kaina derinama individualiai.",
+        },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
       ctaDesc: "Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.",
@@ -368,6 +372,10 @@ export const translations = {
           title: "Sandwich panels 80mm and 120mm",
           description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Price negotiable.",
         },
+        {
+          title: "Overhead crane with hoist, 5 t",
+          description: "Electric hoist with 5-ton lifting capacity. Crane beam — 10 m long, 60 cm high. Crane rails — IPE profile, 35 cm high, 18 m long. Price negotiable.",
+        },
       ],
       ctaTitle: "Need a specific part right now?",
       ctaDesc: "While the catalog is still being prepared, contact us directly — we'll provide price and availability within 24 hours.",
@@ -596,6 +604,10 @@ export const translations = {
         {
           title: "Sandwichpaneler 80mm og 120mm",
           description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Pris etter avtale.",
+        },
+        {
+          title: "Traverskran med talje, 5 t",
+          description: "Elektrisk talje med 5 tonns kapasitet. Kranbjelke — 10 m lang, 60 cm høy. Kranskinner — IPE-profil, 35 cm høy, 18 m lang. Pris etter avtale.",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",

@@ -17,6 +17,14 @@ const listingImages: string[][] = [
     "/skelbimai/sandwich-plokstes-3.webp",
     "/skelbimai/sandwich-plokstes-4.webp",
   ],
+  [
+    "/skelbimai/telferis-kranas-1.webp",
+    "/skelbimai/telferis-kranas-2.webp",
+    "/skelbimai/telferis-kranas-3.webp",
+    "/skelbimai/telferis-kranas-4.webp",
+    "/skelbimai/telferis-kranas-5.webp",
+    "/skelbimai/telferis-kranas-6.webp",
+  ],
 ];
 
 export default function KatalogasClient() {
