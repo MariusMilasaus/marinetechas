@@ -161,6 +161,10 @@ export const translations = {
           title: "Tekinimo staklės",
           description: "Naudotos tekinimo staklės, pagamintos SSRS, Vidurio Volgos staklių gamybos fabrike (Kuibyševas). Kaina derinama individualiai.",
         },
+        {
+          title: "Centrifuginis vandens siurblys Speroni CS 40-250B",
+          description: "Naudotas centrifuginis vandens siurblys, Speroni (Italija), modelis CS 40-250B, pagamintas 2020 m. Galia 11 kW (15 AG), debitas 150–900 l/min, slėgis 54–74 m. Kaina derinama individualiai.",
+        },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
       ctaDesc: "Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.",
@@ -412,6 +416,10 @@ export const translations = {
           title: "Metal lathe",
           description: "Used metal lathe, manufactured in the USSR at the Srednevolzhsky machine-tool factory (Kuibyshev). Price negotiable.",
         },
+        {
+          title: "Centrifugal water pump Speroni CS 40-250B",
+          description: "Used centrifugal water pump, Speroni (Italy), model CS 40-250B, manufactured in 2020. Power 11 kW (15 HP), flow 150–900 l/min, head 54–74 m. Price negotiable.",
+        },
       ],
       ctaTitle: "Need a specific part right now?",
       ctaDesc: "While the catalog is still being prepared, contact us directly — we'll provide price and availability within 24 hours.",
@@ -662,6 +670,10 @@ export const translations = {
         {
           title: "Metalldreiebenk",
           description: "Brukt metalldreiebenk, produsert i USSR ved Srednevolzhsky maskinfabrikk (Kuibyshev). Pris etter avtale.",
+        },
+        {
+          title: "Sentrifugalpumpe Speroni CS 40-250B",
+          description: "Brukt sentrifugal vannpumpe, Speroni (Italia), modell CS 40-250B, produsert i 2020. Effekt 11 kW (15 HP), kapasitet 150–900 l/min, løftehøyde 54–74 m. Pris etter avtale.",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",

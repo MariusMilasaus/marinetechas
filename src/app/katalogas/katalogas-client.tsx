@@ -48,6 +48,13 @@ const listingImages: string[][] = [
     "/skelbimai/tekinimo-stakles-4.webp",
     "/skelbimai/tekinimo-stakles-5.webp",
   ],
+  [
+    "/skelbimai/siurblys-1.webp",
+    "/skelbimai/siurblys-2.webp",
+    "/skelbimai/siurblys-3.webp",
+    "/skelbimai/siurblys-4.webp",
+    "/skelbimai/siurblys-5.webp",
+  ],
 ];
 
 export default function KatalogasClient() {
