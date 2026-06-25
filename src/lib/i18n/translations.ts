@@ -9,6 +9,8 @@ export const translations = {
       meniu: "Meniu",
       search: "Paieška",
       close: "Uždaryti",
+      prev: "Atgal",
+      next: "Pirmyn",
     },
     footer: {
       description: "Profesionalūs inžineriniai sprendimai ir operatyvus aptarnavimas visame pasaulyje.",
@@ -242,6 +244,8 @@ export const translations = {
       meniu: "Menu",
       search: "Search",
       close: "Close",
+      prev: "Previous",
+      next: "Next",
     },
     footer: {
       description: "Professional engineering solutions and responsive service worldwide.",
@@ -475,6 +479,8 @@ export const translations = {
       meniu: "Meny",
       search: "Søk",
       close: "Lukk",
+      prev: "Forrige",
+      next: "Neste",
     },
     footer: {
       description: "Profesjonelle ingeniørløsninger og rask service over hele verden.",

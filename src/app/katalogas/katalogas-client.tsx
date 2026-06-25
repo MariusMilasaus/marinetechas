@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { PackageSearch, Wrench, Snowflake, Zap, Anchor, Tag, X } from "lucide-react";
+import { PackageSearch, Wrench, Snowflake, Zap, Anchor, Tag, X, ChevronLeft, ChevronRight } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -32,8 +32,12 @@ export default function KatalogasClient() {
   const categories = t.katalogas.categories.map((title, i) => ({ icon: categoryIcons[i], title }));
   const listings = t.katalogas.listings;
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
   const openListing = openIndex !== null ? listings[openIndex] : null;
   const openImages = openIndex !== null ? listingImages[openIndex] ?? [] : [];
+
+  const showPrev = () => setLightboxIndex((i) => (i === null ? null : (i - 1 + openImages.length) % openImages.length));
+  const showNext = () => setLightboxIndex((i) => (i === null ? null : (i + 1) % openImages.length));
 
   return (
     <main className="w-full min-h-screen bg-slate-50 pt-[120px] pb-20 font-sans">
@@ -149,13 +153,17 @@ export default function KatalogasClient() {
                 {openImages.length > 0 && (
                   <div className="grid grid-cols-2 gap-1 p-1">
                     {openImages.map((src, i) => (
-                      <div key={i} className="relative h-64 md:h-80">
+                      <div
+                        key={i}
+                        onClick={() => setLightboxIndex(i)}
+                        className="relative h-64 md:h-80 cursor-zoom-in"
+                      >
                         <Image
                           src={src}
                           alt={`${openListing.title} - ${i + 1}`}
                           fill
                           sizes="(max-width: 768px) 50vw, 33vw"
-                          className="object-cover rounded-lg"
+                          className="object-cover rounded-lg hover:opacity-90 transition-opacity"
                         />
                       </div>
                     ))}
@@ -172,6 +180,65 @@ export default function KatalogasClient() {
                     {t.katalogas.skelbimaiContactButton}
                   </Link>
                 </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
+
+        <AnimatePresence>
+          {lightboxIndex !== null && openImages[lightboxIndex] && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setLightboxIndex(null)}
+              className="fixed inset-0 z-[80] bg-black/95 flex items-center justify-center p-4"
+            >
+              <button
+                type="button"
+                onClick={() => setLightboxIndex(null)}
+                aria-label={t.nav.close}
+                className="absolute top-4 right-4 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2"
+              >
+                <X size={24} />
+              </button>
+
+              {openImages.length > 1 && (
+                <>
+                  <button
+                    type="button"
+                    onClick={(e) => { e.stopPropagation(); showPrev(); }}
+                    aria-label={t.nav.prev}
+                    className="absolute left-2 md:left-6 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2"
+                  >
+                    <ChevronLeft size={28} />
+                  </button>
+                  <button
+                    type="button"
+                    onClick={(e) => { e.stopPropagation(); showNext(); }}
+                    aria-label={t.nav.next}
+                    className="absolute right-2 md:right-6 z-10 bg-white/10 hover:bg-white/20 text-white rounded-full p-2"
+                  >
+                    <ChevronRight size={28} />
+                  </button>
+                </>
+              )}
+
+              <motion.div
+                key={lightboxIndex}
+                initial={{ opacity: 0, scale: 0.95 }}
+                animate={{ opacity: 1, scale: 1 }}
+                exit={{ opacity: 0, scale: 0.95 }}
+                onClick={(e) => e.stopPropagation()}
+                className="relative w-[92vw] h-[80vh] md:w-[85vw] md:h-[85vh]"
+              >
+                <Image
+                  src={openImages[lightboxIndex]}
+                  alt={`${openListing?.title ?? ""} - ${lightboxIndex + 1}`}
+                  fill
+                  sizes="92vw"
+                  className="object-contain"
+                />
               </motion.div>
             </motion.div>
           )}
