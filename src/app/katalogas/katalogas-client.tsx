@@ -1,10 +1,21 @@
 "use client";
 import { motion } from "framer-motion";
-import { PackageSearch, Wrench, Snowflake, Zap, Anchor } from "lucide-react";
+import Image from "next/image";
+import { PackageSearch, Wrench, Snowflake, Zap, Anchor, Tag } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/language-context";
 
 const categoryIcons = [<Wrench size={28} key="0" />, <Snowflake size={28} key="1" />, <Zap size={28} key="2" />, <Anchor size={28} key="3" />];
+
+interface Listing {
+  title: string;
+  description: string;
+  image: string;
+}
+
+// Naujus skelbimus dėkite čia, kai bus nuotraukos (paveikslėlius keliame į public/skelbimai/):
+// { title: "Naudotas generatorius", description: "Veikiantis, 2018 m.", image: "/skelbimai/generatorius.webp" },
+const listings: Listing[] = [];
 
 export default function KatalogasClient() {
   const { t } = useLanguage();
@@ -40,6 +51,40 @@ export default function KatalogasClient() {
               <h3 className="font-black uppercase text-sm tracking-tight text-slate-800">{cat.title}</h3>
             </motion.div>
           ))}
+        </div>
+
+        <div className="mb-8">
+          <div className="flex items-center gap-3 mb-3">
+            <Tag className="text-[#16AFD1]" size={22} />
+            <h2 className="text-xl font-black uppercase tracking-tight text-slate-900">{t.katalogas.skelbimaiTitle}</h2>
+          </div>
+          <p className="text-slate-500 text-sm mb-6 max-w-xl">{t.katalogas.skelbimaiDesc}</p>
+
+          {listings.length === 0 ? (
+            <div className="bg-white border border-dashed border-slate-200 rounded-xl p-10 text-center text-slate-400 text-sm">
+              {t.katalogas.skelbimaiEmptyText}
+            </div>
+          ) : (
+            <div className="grid sm:grid-cols-2 gap-6">
+              {listings.map((item, idx) => (
+                <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                  <div className="relative h-48">
+                    <Image src={item.image} alt={item.title} fill className="object-cover" />
+                  </div>
+                  <div className="p-5">
+                    <h3 className="font-black text-slate-800 mb-1">{item.title}</h3>
+                    <p className="text-slate-500 text-sm mb-4">{item.description}</p>
+                    <Link
+                      href="/kontaktai"
+                      className="inline-block bg-[#0C5588] text-white px-5 py-2 rounded-md text-xs font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
+                    >
+                      {t.katalogas.skelbimaiContactButton}
+                    </Link>
+                  </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
 
         <div className="bg-[#0C5588] text-white p-10 rounded-xl shadow-xl text-center">
