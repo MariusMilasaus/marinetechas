@@ -2,14 +2,28 @@
 
 import Link from "next/link"
 import Image from "next/image"
-import { useState } from "react"
+import { useEffect, useRef, useState } from "react"
 import { Search, Menu, X, Building2, Wrench, PackageSearch, Phone, Mail, MapPin, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/language-context"
 import type { Locale } from "@/lib/i18n/translations"
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
+  const headerRef = useRef<HTMLElement>(null);
   const { locale, setLocale, t } = useLanguage();
+
+  useEffect(() => {
+    if (!open) return;
+
+    const handleClickOutside = (e: MouseEvent) => {
+      if (headerRef.current && !headerRef.current.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [open]);
 
   const links = [
     { href: "/apie-mus", label: t.nav.apieMus, icon: <Building2 size={20} /> },
@@ -25,7 +39,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <header className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
+    <header ref={headerRef} className="fixed top-0 left-0 w-full z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
       <div className="w-full px-6 md:px-12 h-20 flex items-center justify-between">
         
         {/* LOGO - Tikros spalvos */}
