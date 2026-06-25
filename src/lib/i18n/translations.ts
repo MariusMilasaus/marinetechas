@@ -8,6 +8,7 @@ export const translations = {
       susisiekite: "Susisiekite",
       meniu: "Meniu",
       search: "Paieška",
+      close: "Uždaryti",
     },
     footer: {
       description: "Profesionalūs inžineriniai sprendimai ir operatyvus aptarnavimas visame pasaulyje.",
@@ -136,7 +137,7 @@ export const translations = {
       listings: [
         {
           title: "Sandwich plokštės 80mm ir 120mm",
-          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kiekis ir kaina derinama individualiai.",
+          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kaina derinama individualiai.",
         },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
@@ -236,6 +237,7 @@ export const translations = {
       susisiekite: "Get in touch",
       meniu: "Menu",
       search: "Search",
+      close: "Close",
     },
     footer: {
       description: "Professional engineering solutions and responsive service worldwide.",
@@ -364,7 +366,7 @@ export const translations = {
       listings: [
         {
           title: "Sandwich panels 80mm and 120mm",
-          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Quantity and price negotiable.",
+          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Price negotiable.",
         },
       ],
       ctaTitle: "Need a specific part right now?",
@@ -464,6 +466,7 @@ export const translations = {
       susisiekite: "Ta kontakt",
       meniu: "Meny",
       search: "Søk",
+      close: "Lukk",
     },
     footer: {
       description: "Profesjonelle ingeniørløsninger og rask service over hele verden.",
@@ -592,7 +595,7 @@ export const translations = {
       listings: [
         {
           title: "Sandwichpaneler 80mm og 120mm",
-          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Mengde og pris etter avtale.",
+          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Pris etter avtale.",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",

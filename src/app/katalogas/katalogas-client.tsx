@@ -1,7 +1,8 @@
 "use client";
-import { motion } from "framer-motion";
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import { PackageSearch, Wrench, Snowflake, Zap, Anchor, Tag } from "lucide-react";
+import { PackageSearch, Wrench, Snowflake, Zap, Anchor, Tag, X } from "lucide-react";
 import Link from "next/link";
 import { useLanguage } from "@/lib/i18n/language-context";
 
@@ -22,6 +23,9 @@ export default function KatalogasClient() {
   const { t } = useLanguage();
   const categories = t.katalogas.categories.map((title, i) => ({ icon: categoryIcons[i], title }));
   const listings = t.katalogas.listings;
+  const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const openListing = openIndex !== null ? listings[openIndex] : null;
+  const openImages = openIndex !== null ? listingImages[openIndex] ?? [] : [];
 
   return (
     <main className="w-full min-h-screen bg-slate-50 pt-[120px] pb-20 font-sans">
@@ -71,7 +75,11 @@ export default function KatalogasClient() {
               {listings.map((item, idx) => {
                 const images = listingImages[idx] ?? [];
                 return (
-                  <div key={idx} className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden">
+                  <div
+                    key={idx}
+                    onClick={() => setOpenIndex(idx)}
+                    className="bg-white rounded-xl shadow-sm border border-slate-100 overflow-hidden cursor-pointer hover:shadow-lg hover:border-[#16AFD1]/40 transition-all"
+                  >
                     {images.length > 0 && (
                       <div className="grid grid-cols-2 gap-0.5 h-56">
                         {images.slice(0, 4).map((src, i) => (
@@ -89,9 +97,10 @@ export default function KatalogasClient() {
                     )}
                     <div className="p-5">
                       <h3 className="font-black text-slate-800 mb-1">{item.title}</h3>
-                      <p className="text-slate-500 text-sm mb-4">{item.description}</p>
+                      <p className="text-slate-500 text-sm mb-4 line-clamp-2">{item.description}</p>
                       <Link
                         href="/kontaktai"
+                        onClick={(e) => e.stopPropagation()}
                         className="inline-block bg-[#0C5588] text-white px-5 py-2 rounded-md text-xs font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
                       >
                         {t.katalogas.skelbimaiContactButton}
@@ -103,6 +112,62 @@ export default function KatalogasClient() {
             </div>
           )}
         </div>
+
+        <AnimatePresence>
+          {openListing && (
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setOpenIndex(null)}
+              className="fixed inset-0 z-[60] bg-black/80 flex items-center justify-center p-4"
+            >
+              <motion.div
+                initial={{ opacity: 0, y: 20, scale: 0.97 }}
+                animate={{ opacity: 1, y: 0, scale: 1 }}
+                exit={{ opacity: 0, y: 20, scale: 0.97 }}
+                onClick={(e) => e.stopPropagation()}
+                className="bg-white rounded-xl max-w-3xl w-full max-h-[90vh] overflow-y-auto relative"
+              >
+                <button
+                  type="button"
+                  onClick={() => setOpenIndex(null)}
+                  aria-label={t.nav.close}
+                  className="absolute top-4 right-4 z-10 bg-white/90 hover:bg-white text-slate-800 rounded-full p-2 shadow-md"
+                >
+                  <X size={20} />
+                </button>
+
+                {openImages.length > 0 && (
+                  <div className="grid grid-cols-2 gap-1 p-1">
+                    {openImages.map((src, i) => (
+                      <div key={i} className="relative h-64 md:h-80">
+                        <Image
+                          src={src}
+                          alt={`${openListing.title} - ${i + 1}`}
+                          fill
+                          sizes="(max-width: 768px) 50vw, 33vw"
+                          className="object-cover rounded-lg"
+                        />
+                      </div>
+                    ))}
+                  </div>
+                )}
+
+                <div className="p-6 md:p-8">
+                  <h3 className="text-2xl font-black text-slate-900 mb-3">{openListing.title}</h3>
+                  <p className="text-slate-600 leading-relaxed mb-6">{openListing.description}</p>
+                  <Link
+                    href="/kontaktai"
+                    className="inline-block bg-[#0C5588] text-white px-6 py-3 rounded-md text-sm font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
+                  >
+                    {t.katalogas.skelbimaiContactButton}
+                  </Link>
+                </div>
+              </motion.div>
+            </motion.div>
+          )}
+        </AnimatePresence>
 
         <div className="bg-[#0C5588] text-white p-10 rounded-xl shadow-xl text-center">
           <h2 className="text-xl font-black uppercase mb-3">{t.katalogas.ctaTitle}</h2>
