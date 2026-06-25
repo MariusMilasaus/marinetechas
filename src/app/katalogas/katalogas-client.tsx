@@ -33,6 +33,14 @@ const listingImages: string[][] = [
     "/skelbimai/smirgelis-4.webp",
     "/skelbimai/smirgelis-5.webp",
   ],
+  [
+    "/skelbimai/pjuklas-1.webp",
+    "/skelbimai/pjuklas-2.webp",
+    "/skelbimai/pjuklas-3.webp",
+    "/skelbimai/pjuklas-4.webp",
+    "/skelbimai/pjuklas-5.webp",
+    "/skelbimai/pjuklas-6.webp",
+  ],
 ];
 
 export default function KatalogasClient() {

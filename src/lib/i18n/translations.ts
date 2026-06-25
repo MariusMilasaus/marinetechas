@@ -153,6 +153,10 @@ export const translations = {
           title: "Dviejų ratų galandimo staklės",
           description: "Naudotos, veikiančios dviejų ratų galandimo staklės. Tinka įrankiams galandinti. Kaina derinama individualiai.",
         },
+        {
+          title: "Metalo pjovimo staklės (diskinis pjūklas)",
+          description: "Naudotos metalo pjovimo staklės su abrazyviniu disku. Tinka metalo profiliams ir strypams pjauti. Kaina derinama individualiai.",
+        },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
       ctaDesc: "Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.",
@@ -396,6 +400,10 @@ export const translations = {
           title: "Bench grinder (double wheel)",
           description: "Used, working double-wheel bench grinder. Suitable for sharpening tools. Price negotiable.",
         },
+        {
+          title: "Metal cutting saw (abrasive disc)",
+          description: "Used metal cutting saw with abrasive cutting disc. Suitable for cutting metal profiles and bars. Price negotiable.",
+        },
       ],
       ctaTitle: "Need a specific part right now?",
       ctaDesc: "While the catalog is still being prepared, contact us directly — we'll provide price and availability within 24 hours.",
@@ -638,6 +646,10 @@ export const translations = {
         {
           title: "Slipemaskin (dobbel skive)",
           description: "Brukt, fungerende slipemaskin med to slipeskiver. Passer til sliping av verktøy. Pris etter avtale.",
+        },
+        {
+          title: "Metallkappsag (med slipeskive)",
+          description: "Brukt metallkappsag med slipeskive. Passer til kapping av metallprofiler og stenger. Pris etter avtale.",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",
