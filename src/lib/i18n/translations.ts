@@ -149,6 +149,10 @@ export const translations = {
           title: "Kranas su telferiu, 3 t",
           description: "Telferis su 3 tonų keliamąja galia. Sijos ir bėgių matmenys — pasiteiraukite susisiekę. Kaina derinama individualiai.",
         },
+        {
+          title: "Šmirgelis (dviejų ratų galandimo staklės)",
+          description: "Naudotas, veikiantis šmirgelis su dviem šlifavimo ratais. Tinka įrankiams galandinti. Kaina derinama individualiai.",
+        },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
       ctaDesc: "Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.",
@@ -388,6 +392,10 @@ export const translations = {
           title: "Overhead crane with hoist, 3 t",
           description: "Electric hoist with 3-ton lifting capacity. Beam and rail dimensions — please contact us for details. Price negotiable.",
         },
+        {
+          title: "Bench grinder (double wheel)",
+          description: "Used, working double-wheel bench grinder. Suitable for sharpening tools. Price negotiable.",
+        },
       ],
       ctaTitle: "Need a specific part right now?",
       ctaDesc: "While the catalog is still being prepared, contact us directly — we'll provide price and availability within 24 hours.",
@@ -626,6 +634,10 @@ export const translations = {
         {
           title: "Traverskran med talje, 3 t",
           description: "Elektrisk talje med 3 tonns kapasitet. Mål på bjelke og skinner — kontakt oss for detaljer. Pris etter avtale.",
+        },
+        {
+          title: "Slipemaskin (dobbel skive)",
+          description: "Brukt, fungerende slipemaskin med to slipeskiver. Passer til sliping av verktøy. Pris etter avtale.",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",

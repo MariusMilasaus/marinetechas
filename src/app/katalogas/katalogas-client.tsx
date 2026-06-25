@@ -26,6 +26,13 @@ const listingImages: string[][] = [
     "/skelbimai/telferis-kranas-6.webp",
   ],
   ["/skelbimai/telferis-kranas-3t-1.webp"],
+  [
+    "/skelbimai/smirgelis-1.webp",
+    "/skelbimai/smirgelis-2.webp",
+    "/skelbimai/smirgelis-3.webp",
+    "/skelbimai/smirgelis-4.webp",
+    "/skelbimai/smirgelis-5.webp",
+  ],
 ];
 
 export default function KatalogasClient() {
