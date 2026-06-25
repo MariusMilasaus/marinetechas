@@ -41,6 +41,13 @@ const listingImages: string[][] = [
     "/skelbimai/pjuklas-5.webp",
     "/skelbimai/pjuklas-6.webp",
   ],
+  [
+    "/skelbimai/tekinimo-stakles-1.webp",
+    "/skelbimai/tekinimo-stakles-2.webp",
+    "/skelbimai/tekinimo-stakles-3.webp",
+    "/skelbimai/tekinimo-stakles-4.webp",
+    "/skelbimai/tekinimo-stakles-5.webp",
+  ],
 ];
 
 export default function KatalogasClient() {
