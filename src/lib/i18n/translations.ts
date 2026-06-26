@@ -139,31 +139,31 @@ export const translations = {
       listings: [
         {
           title: "Sandwich plokštės 80mm ir 120mm",
-          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kaina derinama individualiai.",
+          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kaina — 10 €/m², priklausomai nuo kiekio.",
         },
         {
           title: "Kranas su telferiu, 5 t",
-          description: "Telferis su 5 tonų keliamąja galia. Krano sija — 10 m ilgio, 60 cm aukščio. Krano bėgiai — IPE profilis, 35 cm aukščio, 18 m ilgio. Kaina derinama individualiai.",
+          description: "Telferis su 5 tonų keliamąja galia. Krano sija — 10 m ilgio, 60 cm aukščio. Krano bėgiai — IPE profilis, 35 cm aukščio, 18 m ilgio. Kaina — 5000 €.",
         },
         {
           title: "Kranas su telferiu, 3 t",
-          description: "Telferis su 3 tonų keliamąja galia. Sijos ir bėgių matmenys — pasiteiraukite susisiekę. Kaina derinama individualiai.",
+          description: "Telferis su 3 tonų keliamąja galia. Bėgių ilgis — 6 m. Kaina — 900 €.",
         },
         {
           title: "Dviejų ratų galandimo staklės",
-          description: "Naudotos, veikiančios dviejų ratų galandimo staklės. Tinka įrankiams galandinti. Kaina derinama individualiai.",
+          description: "Naudotos, veikiančios dviejų ratų galandimo staklės. Tinka įrankiams galandinti. Kaina — 400 €.",
         },
         {
           title: "Metalo pjovimo staklės (diskinis pjūklas)",
-          description: "Naudotos metalo pjovimo staklės su abrazyviniu disku. Tinka metalo profiliams ir strypams pjauti. Kaina derinama individualiai.",
+          description: "Naudotos metalo pjovimo staklės su abrazyviniu disku. Tinka metalo profiliams ir strypams pjauti. Kaina — 250 €.",
         },
         {
           title: "Tekinimo staklės",
-          description: "Naudotos tekinimo staklės, pagamintos SSRS, Vidurio Volgos staklių gamybos fabrike (Kuibyševas). Kaina derinama individualiai.",
+          description: "Naudotos tekinimo staklės, pagamintos SSRS, Vidurio Volgos staklių gamybos fabrike (Kuibyševas). Kaina — 1000 €.",
         },
         {
           title: "Centrifuginis vandens siurblys Speroni CS 40-250B",
-          description: "Naudotas centrifuginis vandens siurblys, Speroni (Italija), modelis CS 40-250B, pagamintas 2020 m. Galia 11 kW (15 AG), debitas 150–900 l/min, slėgis 54–74 m. Kaina derinama individualiai.",
+          description: "Naudotas centrifuginis vandens siurblys, Speroni (Italija), modelis CS 40-250B, pagamintas 2020 m. Galia 11 kW (15 AG), debitas 150–900 l/min, slėgis 54–74 m. Kaina — 1250 €.",
         },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
@@ -394,31 +394,31 @@ export const translations = {
       listings: [
         {
           title: "Sandwich panels 80mm and 120mm",
-          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Price negotiable.",
+          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Price — €10/m², depending on quantity.",
         },
         {
           title: "Overhead crane with hoist, 5 t",
-          description: "Electric hoist with 5-ton lifting capacity. Crane beam — 10 m long, 60 cm high. Crane rails — IPE profile, 35 cm high, 18 m long. Price negotiable.",
+          description: "Electric hoist with 5-ton lifting capacity. Crane beam — 10 m long, 60 cm high. Crane rails — IPE profile, 35 cm high, 18 m long. Price — €5,000.",
         },
         {
           title: "Overhead crane with hoist, 3 t",
-          description: "Electric hoist with 3-ton lifting capacity. Beam and rail dimensions — please contact us for details. Price negotiable.",
+          description: "Electric hoist with 3-ton lifting capacity. Rail length — 6 m. Price — €900.",
         },
         {
           title: "Bench grinder (double wheel)",
-          description: "Used, working double-wheel bench grinder. Suitable for sharpening tools. Price negotiable.",
+          description: "Used, working double-wheel bench grinder. Suitable for sharpening tools. Price — €400.",
         },
         {
           title: "Metal cutting saw (abrasive disc)",
-          description: "Used metal cutting saw with abrasive cutting disc. Suitable for cutting metal profiles and bars. Price negotiable.",
+          description: "Used metal cutting saw with abrasive cutting disc. Suitable for cutting metal profiles and bars. Price — €250.",
         },
         {
           title: "Metal lathe",
-          description: "Used metal lathe, manufactured in the USSR at the Srednevolzhsky machine-tool factory (Kuibyshev). Price negotiable.",
+          description: "Used metal lathe, manufactured in the USSR at the Srednevolzhsky machine-tool factory (Kuibyshev). Price — €1,000.",
         },
         {
           title: "Centrifugal water pump Speroni CS 40-250B",
-          description: "Used centrifugal water pump, Speroni (Italy), model CS 40-250B, manufactured in 2020. Power 11 kW (15 HP), flow 150–900 l/min, head 54–74 m. Price negotiable.",
+          description: "Used centrifugal water pump, Speroni (Italy), model CS 40-250B, manufactured in 2020. Power 11 kW (15 HP), flow 150–900 l/min, head 54–74 m. Price — €1,250.",
         },
       ],
       ctaTitle: "Need a specific part right now?",
@@ -649,31 +649,31 @@ export const translations = {
       listings: [
         {
           title: "Sandwichpaneler 80mm og 120mm",
-          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Pris etter avtale.",
+          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Pris — 10 €/m², avhengig av mengde.",
         },
         {
           title: "Traverskran med talje, 5 t",
-          description: "Elektrisk talje med 5 tonns kapasitet. Kranbjelke — 10 m lang, 60 cm høy. Kranskinner — IPE-profil, 35 cm høy, 18 m lang. Pris etter avtale.",
+          description: "Elektrisk talje med 5 tonns kapasitet. Kranbjelke — 10 m lang, 60 cm høy. Kranskinner — IPE-profil, 35 cm høy, 18 m lang. Pris — 5000 €.",
         },
         {
           title: "Traverskran med talje, 3 t",
-          description: "Elektrisk talje med 3 tonns kapasitet. Mål på bjelke og skinner — kontakt oss for detaljer. Pris etter avtale.",
+          description: "Elektrisk talje med 3 tonns kapasitet. Skinnelengde — 6 m. Pris — 900 €.",
         },
         {
           title: "Slipemaskin (dobbel skive)",
-          description: "Brukt, fungerende slipemaskin med to slipeskiver. Passer til sliping av verktøy. Pris etter avtale.",
+          description: "Brukt, fungerende slipemaskin med to slipeskiver. Passer til sliping av verktøy. Pris — 400 €.",
         },
         {
           title: "Metallkappsag (med slipeskive)",
-          description: "Brukt metallkappsag med slipeskive. Passer til kapping av metallprofiler og stenger. Pris etter avtale.",
+          description: "Brukt metallkappsag med slipeskive. Passer til kapping av metallprofiler og stenger. Pris — 250 €.",
         },
         {
           title: "Metalldreiebenk",
-          description: "Brukt metalldreiebenk, produsert i USSR ved Srednevolzhsky maskinfabrikk (Kuibyshev). Pris etter avtale.",
+          description: "Brukt metalldreiebenk, produsert i USSR ved Srednevolzhsky maskinfabrikk (Kuibyshev). Pris — 1000 €.",
         },
         {
           title: "Sentrifugalpumpe Speroni CS 40-250B",
-          description: "Brukt sentrifugal vannpumpe, Speroni (Italia), modell CS 40-250B, produsert i 2020. Effekt 11 kW (15 HP), kapasitet 150–900 l/min, løftehøyde 54–74 m. Pris etter avtale.",
+          description: "Brukt sentrifugal vannpumpe, Speroni (Italia), modell CS 40-250B, produsert i 2020. Effekt 11 kW (15 HP), kapasitet 150–900 l/min, løftehøyde 54–74 m. Pris — 1250 €.",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",
