@@ -140,13 +140,16 @@ export default function KatalogasClient() {
                     <div className="p-5">
                       <h3 className="font-black text-slate-800 mb-1">{item.title}</h3>
                       <p className="text-slate-500 text-sm mb-4 line-clamp-2">{item.description}</p>
-                      <Link
-                        href="/kontaktai"
-                        onClick={(e) => e.stopPropagation()}
-                        className="inline-block bg-[#0C5588] text-white px-5 py-2 rounded-md text-xs font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
-                      >
-                        {t.katalogas.skelbimaiContactButton}
-                      </Link>
+                      <div className="flex items-center justify-between gap-3">
+                        <span className="font-black text-[#0C5588]">{item.price}</span>
+                        <Link
+                          href="/kontaktai"
+                          onClick={(e) => e.stopPropagation()}
+                          className="inline-block bg-[#0C5588] text-white px-5 py-2 rounded-md text-xs font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
+                        >
+                          {t.katalogas.skelbimaiContactButton}
+                        </Link>
+                      </div>
                     </div>
                   </div>
                 );
@@ -203,12 +206,15 @@ export default function KatalogasClient() {
                 <div className="p-6 md:p-8">
                   <h3 className="text-2xl font-black text-slate-900 mb-3">{openListing.title}</h3>
                   <p className="text-slate-600 leading-relaxed mb-6">{openListing.description}</p>
-                  <Link
-                    href="/kontaktai"
-                    className="inline-block bg-[#0C5588] text-white px-6 py-3 rounded-md text-sm font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
-                  >
-                    {t.katalogas.skelbimaiContactButton}
-                  </Link>
+                  <div className="flex items-center gap-4">
+                    <span className="text-xl font-black text-[#0C5588]">{openListing.price}</span>
+                    <Link
+                      href="/kontaktai"
+                      className="inline-block bg-[#0C5588] text-white px-6 py-3 rounded-md text-sm font-black uppercase tracking-widest hover:bg-[#16AFD1] transition-colors"
+                    >
+                      {t.katalogas.skelbimaiContactButton}
+                    </Link>
+                  </div>
                 </div>
               </motion.div>
             </motion.div>

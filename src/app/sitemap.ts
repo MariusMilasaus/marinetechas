@@ -5,6 +5,7 @@ const routes = [
   { path: "/apie-mus", priority: 0.8, changeFrequency: "monthly" as const },
   { path: "/paslaugos", priority: 0.9, changeFrequency: "monthly" as const },
   { path: "/katalogas", priority: 0.7, changeFrequency: "monthly" as const },
+  { path: "/atlikti-darbai", priority: 0.7, changeFrequency: "monthly" as const },
   { path: "/kontaktai", priority: 0.8, changeFrequency: "yearly" as const },
   { path: "/privatumas", priority: 0.3, changeFrequency: "yearly" as const },
   { path: "/slapukai", priority: 0.3, changeFrequency: "yearly" as const },

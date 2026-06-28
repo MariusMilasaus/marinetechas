@@ -9,6 +9,14 @@ export function Footer() {
 
   const infoLinks = ["/privatumas", "/taisykles", "/grazinimas", "/slapukai"];
 
+  const navLinks = [
+    { href: "/apie-mus", label: t.nav.apieMus },
+    { href: "/paslaugos", label: t.nav.paslaugos },
+    { href: "/katalogas", label: t.nav.katalogas },
+    { href: "/atlikti-darbai", label: t.nav.atliktiDarbai },
+    { href: "/kontaktai", label: t.nav.kontaktai },
+  ];
+
   return (
     <footer className="w-full bg-black/20 backdrop-blur-xl text-slate-800 pt-12 pb-6 border-t border-white/10 mt-auto">
       <div className="max-w-7xl mx-auto px-6">
@@ -31,12 +39,12 @@ export function Footer() {
   </p>
 </div>
 
-          {/* 2. Paslaugos */}
+          {/* 2. Navigacija */}
           <div className="space-y-3">
-            <p className="text-[11px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.paslaugosTitle}</p>
+            <p className="text-[11px] font-bold uppercase tracking-widest text-[#0C5588]">{t.footer.navTitle}</p>
             <ul className="space-y-1.5 text-xs text-slate-700">
-              {t.footer.paslaugosItems.map((item, i) => (
-                <li key={i}><Link href="/paslaugos" className="inline-block py-1.5 hover:text-[#0C5588] transition-colors">{item}</Link></li>
+              {navLinks.map((item) => (
+                <li key={item.href}><Link href={item.href} className="inline-block py-1.5 hover:text-[#0C5588] transition-colors">{item.label}</Link></li>
               ))}
             </ul>
           </div>

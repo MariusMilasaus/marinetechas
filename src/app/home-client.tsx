@@ -171,7 +171,7 @@ export default function HomeClient() {
             transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           >
             {[...brands, ...brands].map((brand, i) => (
-              <span key={i} className="text-base md:text-xl font-black text-slate-300 hover:text-[#16AFD1] transition-colors uppercase tracking-tighter">
+              <span key={i} className="text-base md:text-xl font-black text-slate-600 hover:text-[#16AFD1] transition-colors uppercase tracking-tighter">
                 {brand}
               </span>
             ))}

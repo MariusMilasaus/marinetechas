@@ -3,7 +3,7 @@
 import Link from "next/link"
 import Image from "next/image"
 import { useEffect, useRef, useState } from "react"
-import { Search, Menu, X, Building2, Wrench, PackageSearch, Phone, Mail, MapPin, ChevronRight } from "lucide-react"
+import { Search, Menu, X, Building2, Wrench, PackageSearch, Hammer, Phone, Mail, MapPin, ChevronRight } from "lucide-react"
 import { useLanguage } from "@/lib/i18n/language-context"
 import type { Locale } from "@/lib/i18n/translations"
 
@@ -29,6 +29,7 @@ export const Navbar = () => {
     { href: "/apie-mus", label: t.nav.apieMus, icon: <Building2 size={20} /> },
     { href: "/paslaugos", label: t.nav.paslaugos, icon: <Wrench size={20} /> },
     { href: "/katalogas", label: t.nav.katalogas, icon: <PackageSearch size={20} /> },
+    { href: "/atlikti-darbai", label: t.nav.atliktiDarbai, icon: <Hammer size={20} /> },
     { href: "/kontaktai", label: t.nav.kontaktai, icon: <Phone size={20} /> },
   ];
 
@@ -59,6 +60,7 @@ export const Navbar = () => {
           <Link href="/apie-mus" className="hover:text-[#16AFD1] transition-colors">{t.nav.apieMus}</Link>
           <Link href="/paslaugos" className="hover:text-[#16AFD1] transition-colors">{t.nav.paslaugos}</Link>
           <Link href="/katalogas" className="hover:text-[#16AFD1] transition-colors">{t.nav.katalogas}</Link>
+          <Link href="/atlikti-darbai" className="hover:text-[#16AFD1] transition-colors">{t.nav.atliktiDarbai}</Link>
           <Link href="/kontaktai" className="hover:text-[#16AFD1] transition-colors">{t.nav.kontaktai}</Link>
         </nav>
 

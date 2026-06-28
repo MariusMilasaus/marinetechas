@@ -4,6 +4,7 @@ export const translations = {
       apieMus: "Apie mus",
       paslaugos: "Paslaugos",
       katalogas: "Katalogas",
+      atliktiDarbai: "Atlikti darbai",
       kontaktai: "Kontaktai",
       susisiekite: "Susisiekite",
       meniu: "Meniu",
@@ -14,8 +15,7 @@ export const translations = {
     },
     footer: {
       description: "Profesionalūs inžineriniai sprendimai ir operatyvus aptarnavimas visame pasaulyje.",
-      paslaugosTitle: "Paslaugos",
-      paslaugosItems: ["Laivų remontas", "Šaldymo įranga", "Dalių tiekimas"],
+      navTitle: "Naršyti",
       infoTitle: "Informacija",
       infoItems: ["Privatumo politika", "Naudojimosi taisyklės", "Grąžinimas", "Slapukai"],
       contactTitle: "Susisiekite",
@@ -139,35 +139,102 @@ export const translations = {
       listings: [
         {
           title: "Sandwich plokštės 80mm ir 120mm",
-          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams. Kaina derinama individualiai.",
+          description: "Naudotos, geros būklės sandwich plokštės su poliuretano užpildu. Tinka pastatų sienoms ir stogams.",
+          price: "10 €/m²",
         },
         {
           title: "Kranas su telferiu, 5 t",
-          description: "Telferis su 5 tonų keliamąja galia. Krano sija — 10 m ilgio, 60 cm aukščio. Krano bėgiai — IPE profilis, 35 cm aukščio, 18 m ilgio. Kaina derinama individualiai.",
+          description: "Telferis su 5 tonų keliamąja galia. Krano sija — 10 m ilgio, 60 cm aukščio. Krano bėgiai — IPE profilis, 35 cm aukščio, 18 m ilgio.",
+          price: "5000 €",
         },
         {
           title: "Kranas su telferiu, 3 t",
-          description: "Telferis su 3 tonų keliamąja galia. Sijos ir bėgių matmenys — pasiteiraukite susisiekę. Kaina derinama individualiai.",
+          description: "Telferis su 3 tonų keliamąja galia. Bėgio ilgis — 6 m.",
+          price: "900 €",
         },
         {
           title: "Dviejų ratų galandimo staklės",
-          description: "Naudotos, veikiančios dviejų ratų galandimo staklės. Tinka įrankiams galandinti. Kaina derinama individualiai.",
+          description: "Naudotos, veikiančios dviejų ratų galandimo staklės. Tinka įrankiams galandinti.",
+          price: "400 €",
         },
         {
           title: "Metalo pjovimo staklės (diskinis pjūklas)",
-          description: "Naudotos metalo pjovimo staklės su abrazyviniu disku. Tinka metalo profiliams ir strypams pjauti. Kaina derinama individualiai.",
+          description: "Naudotos metalo pjovimo staklės su abrazyviniu disku. Tinka metalo profiliams ir strypams pjauti.",
+          price: "250 €",
         },
         {
           title: "Tekinimo staklės",
-          description: "Naudotos tekinimo staklės, pagamintos SSRS, Vidurio Volgos staklių gamybos fabrike (Kuibyševas). Kaina derinama individualiai.",
+          description: "Naudotos tekinimo staklės, pagamintos SSRS, Vidurio Volgos staklių gamybos fabrike (Kuibyševas).",
+          price: "1000 €",
         },
         {
           title: "Centrifuginis vandens siurblys Speroni CS 40-250B",
-          description: "Naudotas centrifuginis vandens siurblys, Speroni (Italija), modelis CS 40-250B, pagamintas 2020 m. Galia 11 kW (15 AG), debitas 150–900 l/min, slėgis 54–74 m. Kaina derinama individualiai.",
+          description: "Naudotas centrifuginis vandens siurblys, Speroni (Italija), modelis CS 40-250B, pagamintas 2020 m. Galia 11 kW (15 AG), debitas 150–900 l/min, slėgis 54–74 m.",
+          price: "1250 €",
         },
       ],
       ctaTitle: "Reikia konkrečios dalies dabar?",
       ctaDesc: "Kol katalogas dar ruošiamas, susisiekite su mumis tiesiogiai — pateiksime kainą ir prieinamumą per 24 valandas.",
+      ctaButton: "Susisiekite su mumis",
+    },
+    atliktiDarbai: {
+      heroTitlePrefix: "Mūsų atlikti",
+      heroTitleHighlight: "darbai",
+      heroDesc: "Realūs UAB „Marinetechas“ specialistų atlikti laivų variklių remonto, dalių gamybos ir techninės inspekcijos darbai.",
+      seoKeywords: [
+        "atlikti darbai",
+        "laivų variklių remontas",
+        "variklio kapitalinis remontas",
+        "vožtuvų šlifavimas",
+        "metalo gamyba laivams",
+        "ventiliacijos grotelės",
+        "variklio inspekcija",
+        "MarineTECH portfolio",
+      ],
+      projects: [
+        {
+          title: "PE plastikinių vamzdžių gamyba ir montavimas",
+          description: "Pagamintos ir sumontuotos PE plastikinių vamzdžių sistemos pagal individualius techninius reikalavimus.",
+        },
+        {
+          title: "Jūrinių variklių kapitalinis remontas",
+          description: "Atliktas pilnas jūrinio variklio kapitalinis remontas, atstatant gamyklinius techninius parametrus.",
+        },
+        {
+          title: "Kolektorių gamyba",
+          description: "Pagaminti individualūs kolektoriai pagal techninę specifikaciją ir užsakovo brėžinius.",
+        },
+        {
+          title: "Skirtingų mechanizmų dalių restauracija",
+          description: "Atstatytos ir sutvarkytos įvairių mechanizmų dalys, pailginant jų eksploatavimo laiką.",
+        },
+        {
+          title: "Nimonic vožtuvų šlifavimas su Chris-Marine PVG įrenginiu",
+          description: "Nimonic vožtuvai nušlifuoti naudojant mobilų Chris-Marine PVG šlifavimo įrenginį tiesiogiai vietoje.",
+        },
+        {
+          title: "Nerūdijančio plieno ventiliacijos grotelių gamyba",
+          description: "Pagamintos nerūdijančio plieno ventiliacijos grotelės pagal užsakovo techninius brėžinius.",
+        },
+        {
+          title: "Euro grotelių gamyba ir tiekimas žvejybiniams laivams",
+          description: "Pagamintos ir patiektos euro grotelės žvejybiniams laivams.",
+        },
+        {
+          title: "Pagalbinio variklio aptarnavimas",
+          description: "Atliktas pagalbinio variklio techninis aptarnavimas ir patikra.",
+        },
+        {
+          title: "Pagrindinio variklio (ME) inspekcija",
+          description: "Atlikta išsami pagrindinio laivo variklio (ME) techninė inspekcija.",
+        },
+        {
+          title: "Kiti atlikti darbai",
+          description: "Papildomi inžineriniai, remonto ir gamybos darbai, atlikti mūsų specialistų komandos.",
+        },
+      ],
+      ctaTitle: "Reikia panašaus darbo?",
+      ctaDesc: "Susisiekite su mumis — aptarsime jūsų projektą ir pateiksime sprendimą per 24 valandas.",
       ctaButton: "Susisiekite su mumis",
     },
     kontaktai: {
@@ -259,6 +326,7 @@ export const translations = {
       apieMus: "About us",
       paslaugos: "Services",
       katalogas: "Catalog",
+      atliktiDarbai: "Completed works",
       kontaktai: "Contact",
       susisiekite: "Get in touch",
       meniu: "Menu",
@@ -269,8 +337,7 @@ export const translations = {
     },
     footer: {
       description: "Professional engineering solutions and responsive service worldwide.",
-      paslaugosTitle: "Services",
-      paslaugosItems: ["Ship repair", "Refrigeration equipment", "Parts supply"],
+      navTitle: "Navigate",
       infoTitle: "Information",
       infoItems: ["Privacy policy", "Terms of use", "Returns", "Cookies"],
       contactTitle: "Get in touch",
@@ -394,35 +461,102 @@ export const translations = {
       listings: [
         {
           title: "Sandwich panels 80mm and 120mm",
-          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs. Price negotiable.",
+          description: "Used sandwich panels in good condition with polyurethane core. Suitable for building walls and roofs.",
+          price: "€10/m²",
         },
         {
           title: "Overhead crane with hoist, 5 t",
-          description: "Electric hoist with 5-ton lifting capacity. Crane beam — 10 m long, 60 cm high. Crane rails — IPE profile, 35 cm high, 18 m long. Price negotiable.",
+          description: "Electric hoist with 5-ton lifting capacity. Crane beam — 10 m long, 60 cm high. Crane rails — IPE profile, 35 cm high, 18 m long.",
+          price: "€5000",
         },
         {
           title: "Overhead crane with hoist, 3 t",
-          description: "Electric hoist with 3-ton lifting capacity. Beam and rail dimensions — please contact us for details. Price negotiable.",
+          description: "Electric hoist with 3-ton lifting capacity. Rail length — 6 m.",
+          price: "€900",
         },
         {
           title: "Bench grinder (double wheel)",
-          description: "Used, working double-wheel bench grinder. Suitable for sharpening tools. Price negotiable.",
+          description: "Used, working double-wheel bench grinder. Suitable for sharpening tools.",
+          price: "€400",
         },
         {
           title: "Metal cutting saw (abrasive disc)",
-          description: "Used metal cutting saw with abrasive cutting disc. Suitable for cutting metal profiles and bars. Price negotiable.",
+          description: "Used metal cutting saw with abrasive cutting disc. Suitable for cutting metal profiles and bars.",
+          price: "€250",
         },
         {
           title: "Metal lathe",
-          description: "Used metal lathe, manufactured in the USSR at the Srednevolzhsky machine-tool factory (Kuibyshev). Price negotiable.",
+          description: "Used metal lathe, manufactured in the USSR at the Srednevolzhsky machine-tool factory (Kuibyshev).",
+          price: "€1000",
         },
         {
           title: "Centrifugal water pump Speroni CS 40-250B",
-          description: "Used centrifugal water pump, Speroni (Italy), model CS 40-250B, manufactured in 2020. Power 11 kW (15 HP), flow 150–900 l/min, head 54–74 m. Price negotiable.",
+          description: "Used centrifugal water pump, Speroni (Italy), model CS 40-250B, manufactured in 2020. Power 11 kW (15 HP), flow 150–900 l/min, head 54–74 m.",
+          price: "€1250",
         },
       ],
       ctaTitle: "Need a specific part right now?",
       ctaDesc: "While the catalog is still being prepared, contact us directly — we'll provide price and availability within 24 hours.",
+      ctaButton: "Contact us",
+    },
+    atliktiDarbai: {
+      heroTitlePrefix: "Our completed",
+      heroTitleHighlight: "works",
+      heroDesc: "Real engine repair, parts manufacturing and technical inspection work carried out by UAB „Marinetechas“ specialists.",
+      seoKeywords: [
+        "completed works",
+        "ship engine repair",
+        "main engine overhaul",
+        "valve grinding",
+        "metal manufacturing for ships",
+        "ventilation grating",
+        "engine inspection",
+        "MarineTECH portfolio",
+      ],
+      projects: [
+        {
+          title: "PE plastic pipe manufacturing & mounting",
+          description: "Manufactured and installed PE plastic piping systems according to individual technical requirements.",
+        },
+        {
+          title: "Marine engine overhaul",
+          description: "Performed a full overhaul of a marine engine, restoring factory technical parameters.",
+        },
+        {
+          title: "Manufacturing of collectors",
+          description: "Manufactured custom collectors according to technical specifications and client drawings.",
+        },
+        {
+          title: "Recondition of different mechanism parts",
+          description: "Restored and reconditioned parts of various mechanisms, extending their service life.",
+        },
+        {
+          title: "Nimonic valve grinding with Chris-Marine portable PVG machine",
+          description: "Nimonic valves ground on-site using a mobile Chris-Marine PVG grinding machine.",
+        },
+        {
+          title: "Stainless steel ventilation grating manufacturing",
+          description: "Manufactured stainless steel ventilation gratings according to client technical drawings.",
+        },
+        {
+          title: "Euro grating manufacturing & supply for fishing vessels",
+          description: "Manufactured and supplied euro gratings for fishing vessels.",
+        },
+        {
+          title: "Auxiliary engine service",
+          description: "Performed technical service and inspection of an auxiliary engine.",
+        },
+        {
+          title: "Main engine (ME) inspection",
+          description: "Carried out a thorough technical inspection of a ship's main engine (ME).",
+        },
+        {
+          title: "Other completed works",
+          description: "Additional engineering, repair and manufacturing work carried out by our team of specialists.",
+        },
+      ],
+      ctaTitle: "Need similar work done?",
+      ctaDesc: "Contact us — we'll discuss your project and provide a solution within 24 hours.",
       ctaButton: "Contact us",
     },
     kontaktai: {
@@ -514,6 +648,7 @@ export const translations = {
       apieMus: "Om oss",
       paslaugos: "Tjenester",
       katalogas: "Katalog",
+      atliktiDarbai: "Utførte arbeider",
       kontaktai: "Kontakt",
       susisiekite: "Ta kontakt",
       meniu: "Meny",
@@ -524,8 +659,7 @@ export const translations = {
     },
     footer: {
       description: "Profesjonelle ingeniørløsninger og rask service over hele verden.",
-      paslaugosTitle: "Tjenester",
-      paslaugosItems: ["Skipsreparasjon", "Kjøleutstyr", "Deleforsyning"],
+      navTitle: "Naviger",
       infoTitle: "Informasjon",
       infoItems: ["Personvernerklæring", "Bruksvilkår", "Retur", "Cookies"],
       contactTitle: "Ta kontakt",
@@ -649,35 +783,102 @@ export const translations = {
       listings: [
         {
           title: "Sandwichpaneler 80mm og 120mm",
-          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger. Pris etter avtale.",
+          description: "Brukte sandwichpaneler i god stand med polyuretankjerne. Passer til vegger og tak på bygninger.",
+          price: "10 €/m²",
         },
         {
           title: "Traverskran med talje, 5 t",
-          description: "Elektrisk talje med 5 tonns kapasitet. Kranbjelke — 10 m lang, 60 cm høy. Kranskinner — IPE-profil, 35 cm høy, 18 m lang. Pris etter avtale.",
+          description: "Elektrisk talje med 5 tonns kapasitet. Kranbjelke — 10 m lang, 60 cm høy. Kranskinner — IPE-profil, 35 cm høy, 18 m lang.",
+          price: "5000 €",
         },
         {
           title: "Traverskran med talje, 3 t",
-          description: "Elektrisk talje med 3 tonns kapasitet. Mål på bjelke og skinner — kontakt oss for detaljer. Pris etter avtale.",
+          description: "Elektrisk talje med 3 tonns kapasitet. Skinnelengde — 6 m.",
+          price: "900 €",
         },
         {
           title: "Slipemaskin (dobbel skive)",
-          description: "Brukt, fungerende slipemaskin med to slipeskiver. Passer til sliping av verktøy. Pris etter avtale.",
+          description: "Brukt, fungerende slipemaskin med to slipeskiver. Passer til sliping av verktøy.",
+          price: "400 €",
         },
         {
           title: "Metallkappsag (med slipeskive)",
-          description: "Brukt metallkappsag med slipeskive. Passer til kapping av metallprofiler og stenger. Pris etter avtale.",
+          description: "Brukt metallkappsag med slipeskive. Passer til kapping av metallprofiler og stenger.",
+          price: "250 €",
         },
         {
           title: "Metalldreiebenk",
-          description: "Brukt metalldreiebenk, produsert i USSR ved Srednevolzhsky maskinfabrikk (Kuibyshev). Pris etter avtale.",
+          description: "Brukt metalldreiebenk, produsert i USSR ved Srednevolzhsky maskinfabrikk (Kuibyshev).",
+          price: "1000 €",
         },
         {
           title: "Sentrifugalpumpe Speroni CS 40-250B",
-          description: "Brukt sentrifugal vannpumpe, Speroni (Italia), modell CS 40-250B, produsert i 2020. Effekt 11 kW (15 HP), kapasitet 150–900 l/min, løftehøyde 54–74 m. Pris etter avtale.",
+          description: "Brukt sentrifugal vannpumpe, Speroni (Italia), modell CS 40-250B, produsert i 2020. Effekt 11 kW (15 HP), kapasitet 150–900 l/min, løftehøyde 54–74 m.",
+          price: "1250 €",
         },
       ],
       ctaTitle: "Trenger du en spesifikk del nå?",
       ctaDesc: "Mens katalogen fortsatt er under utarbeidelse, kontakt oss direkte — vi gir deg pris og tilgjengelighet innen 24 timer.",
+      ctaButton: "Kontakt oss",
+    },
+    atliktiDarbai: {
+      heroTitlePrefix: "Våre utførte",
+      heroTitleHighlight: "arbeider",
+      heroDesc: "Reelle motorreparasjoner, deleproduksjon og teknisk inspeksjonsarbeid utført av spesialistene hos UAB „Marinetechas“.",
+      seoKeywords: [
+        "utførte arbeider",
+        "skipsmotorreparasjon",
+        "hovedmotor overhaling",
+        "ventilsliping",
+        "metallproduksjon for skip",
+        "ventilasjonsrist",
+        "motorinspeksjon",
+        "MarineTECH portefølje",
+      ],
+      projects: [
+        {
+          title: "Produksjon og montering av PE-plastrør",
+          description: "Produserte og monterte PE-plastrørsystemer i henhold til individuelle tekniske krav.",
+        },
+        {
+          title: "Overhaling av skipsmotor",
+          description: "Utførte en full overhaling av en skipsmotor og gjenopprettet fabrikkens tekniske parametere.",
+        },
+        {
+          title: "Produksjon av kolletorer",
+          description: "Produserte tilpassede kolletorer i henhold til tekniske spesifikasjoner og kundens tegninger.",
+        },
+        {
+          title: "Restaurering av ulike mekanismedeler",
+          description: "Restaurerte og satte i stand deler fra ulike mekanismer, og forlenget dermed deres brukstid.",
+        },
+        {
+          title: "Sliping av Nimonic-ventiler med Chris-Marine PVG-maskin",
+          description: "Nimonic-ventiler slipt på stedet med en mobil Chris-Marine PVG slipemaskin.",
+        },
+        {
+          title: "Produksjon av ventilasjonsrist i rustfritt stål",
+          description: "Produserte ventilasjonsrist i rustfritt stål i henhold til kundens tekniske tegninger.",
+        },
+        {
+          title: "Produksjon og levering av eurorist for fiskefartøy",
+          description: "Produserte og leverte eurorist for fiskefartøy.",
+        },
+        {
+          title: "Service av hjelpemotor",
+          description: "Utførte teknisk service og inspeksjon av en hjelpemotor.",
+        },
+        {
+          title: "Inspeksjon av hovedmotor (ME)",
+          description: "Utførte en grundig teknisk inspeksjon av et skips hovedmotor (ME).",
+        },
+        {
+          title: "Andre utførte arbeider",
+          description: "Ytterligere ingeniør-, reparasjons- og produksjonsarbeid utført av vårt team av spesialister.",
+        },
+      ],
+      ctaTitle: "Trenger du lignende arbeid?",
+      ctaDesc: "Kontakt oss — vi diskuterer ditt prosjekt og gir en løsning innen 24 timer.",
       ctaButton: "Kontakt oss",
     },
     kontaktai: {
