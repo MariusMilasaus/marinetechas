@@ -1,11 +1,33 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
 import { useLanguage } from "@/lib/i18n/language-context";
 
+type FormStatus = "idle" | "sending" | "success" | "error";
+
 export default function KontaktaiClient() {
   const { t } = useLanguage();
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [form, setForm] = useState({ name: "", email: "", topic: t.kontaktai.formTopicOptions[0], message: "" });
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus("sending");
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      if (!res.ok) throw new Error("Request failed");
+      setStatus("success");
+      setForm({ name: "", email: "", topic: t.kontaktai.formTopicOptions[0], message: "" });
+    } catch {
+      setStatus("error");
+    }
+  };
 
   const contactItems = [
     {
@@ -84,12 +106,15 @@ export default function KontaktaiClient() {
   transition={{ delay: 0.3 }}
   className="bg-slate-50 p-8 md:p-12 rounded-xl shadow-2xl border-t-8 border-[#0C5588] md:-mt-30 z-10 relative"
 >
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
                   <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formNameLabel}</label>
                   <input
                     type="text"
+                    required
+                    value={form.name}
+                    onChange={(e) => setForm({ ...form, name: e.target.value })}
                     placeholder={t.kontaktai.formNamePlaceholder}
                     className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
                   />
@@ -98,6 +123,9 @@ export default function KontaktaiClient() {
                   <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formEmailLabel}</label>
                   <input
                     type="email"
+                    required
+                    value={form.email}
+                    onChange={(e) => setForm({ ...form, email: e.target.value })}
                     placeholder={t.kontaktai.formEmailPlaceholder}
                     className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900"
                   />
@@ -106,7 +134,11 @@ export default function KontaktaiClient() {
 
               <div className="space-y-2">
                 <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formTopicLabel}</label>
-                <select className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] outline-none transition-all font-medium text-slate-900">
+                <select
+                  value={form.topic}
+                  onChange={(e) => setForm({ ...form, topic: e.target.value })}
+                  className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] outline-none transition-all font-medium text-slate-900"
+                >
                   {t.kontaktai.formTopicOptions.map((opt, i) => (
                     <option key={i}>{opt}</option>
                   ))}
@@ -117,6 +149,9 @@ export default function KontaktaiClient() {
                 <label className="text-xs font-black uppercase tracking-widest text-slate-500">{t.kontaktai.formMessageLabel}</label>
                 <textarea
                   rows={5}
+                  required
+                  value={form.message}
+                  onChange={(e) => setForm({ ...form, message: e.target.value })}
                   placeholder={t.kontaktai.formMessagePlaceholder}
                   className="w-full p-4 rounded-md bg-white border border-slate-200 focus:border-[#16AFD1] focus:ring-1 focus:ring-[#16AFD1] outline-none transition-all font-medium text-slate-900 resize-none"
                 ></textarea>
@@ -124,11 +159,23 @@ export default function KontaktaiClient() {
 
               <button
                 type="submit"
-                className="w-full bg-[#0C5588] hover:bg-[#16AFD1] text-white py-5 px-10 rounded-md font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-300 shadow-lg group"
+                disabled={status === "sending"}
+                className="w-full bg-[#0C5588] hover:bg-[#16AFD1] disabled:opacity-60 disabled:cursor-not-allowed text-white py-5 px-10 rounded-md font-black uppercase tracking-[0.2em] flex items-center justify-center gap-3 transition-all duration-300 shadow-lg group"
               >
-                <span>{t.kontaktai.submitButton}</span>
+                <span>{status === "sending" ? t.kontaktai.submitButtonSending : t.kontaktai.submitButton}</span>
                 <Send size={18} className="group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
               </button>
+
+              {status === "success" && (
+                <p className="text-sm font-bold text-green-700 bg-green-50 border border-green-200 rounded-md p-4">
+                  {t.kontaktai.submitSuccess}
+                </p>
+              )}
+              {status === "error" && (
+                <p className="text-sm font-bold text-red-700 bg-red-50 border border-red-200 rounded-md p-4">
+                  {t.kontaktai.submitError}
+                </p>
+              )}
             </form>
           </motion.div>
 

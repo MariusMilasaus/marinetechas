@@ -255,6 +255,9 @@ export const translations = {
       formMessageLabel: "Jūsų žinutė",
       formMessagePlaceholder: "Aprašykite savo poreikį...",
       submitButton: "Siųsti užklausą",
+      submitButtonSending: "Siunčiama...",
+      submitSuccess: "Dėkojame! Jūsų žinutė išsiųsta — susisieksime greičiausiu metu.",
+      submitError: "Nepavyko išsiųsti žinutės. Pabandykite vėliau arba rašykite info@marinetech.lt.",
       mapTitle: "UAB Marinetechas žemėlapis",
     },
     privatumas: {
@@ -577,6 +580,9 @@ export const translations = {
       formMessageLabel: "Your message",
       formMessagePlaceholder: "Describe your needs...",
       submitButton: "Send inquiry",
+      submitButtonSending: "Sending...",
+      submitSuccess: "Thank you! Your message has been sent — we'll get back to you shortly.",
+      submitError: "Failed to send the message. Please try again later or email info@marinetech.lt.",
       mapTitle: "UAB Marinetechas map",
     },
     privatumas: {
@@ -899,6 +905,9 @@ export const translations = {
       formMessageLabel: "Din melding",
       formMessagePlaceholder: "Beskriv dine behov...",
       submitButton: "Send forespørsel",
+      submitButtonSending: "Sender...",
+      submitSuccess: "Takk! Meldingen din er sendt — vi tar kontakt med deg snart.",
+      submitError: "Kunne ikke sende meldingen. Prøv igjen senere eller send e-post til info@marinetech.lt.",
       mapTitle: "UAB Marinetechas kart",
     },
     privatumas: {
