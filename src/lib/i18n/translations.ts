@@ -45,6 +45,7 @@ export const translations = {
       ctaTitlePrefix: "Pasiruošę pradėti",
       ctaTitleHighlight: "bendradarbiavimą?",
       ctaButton: "Gauti pasiūlymą",
+      partnersTitle: "Mūsų partneriai",
     },
     apieMus: {
       heroTitlePrefix: "Patirtis. Tikslumas.",
@@ -59,6 +60,7 @@ export const translations = {
         "Sertifikuoti specialistai su ilgamete patirtimi.",
         "Garantinis ir pogarantinis techninis aptarnavimas.",
         "Konkurencinga kaina už aukščiausios klasės servisą.",
+        "Įmonė apdrausta 1 000 000 € civilinės atsakomybės draudimu.",
       ],
       valueCards: [
         { title: "Inžinerija", desc: "Pažangiausių technologijų naudojimas remonto procesuose." },
@@ -370,6 +372,7 @@ export const translations = {
       ctaTitlePrefix: "Ready to start a",
       ctaTitleHighlight: "partnership?",
       ctaButton: "Get a quote",
+      partnersTitle: "Our partners",
     },
     apieMus: {
       heroTitlePrefix: "Experience. Precision.",
@@ -384,6 +387,7 @@ export const translations = {
         "Certified specialists with years of experience.",
         "Warranty and post-warranty technical service.",
         "Competitive pricing for top-class service.",
+        "Company insured with €1,000,000 general liability insurance.",
       ],
       valueCards: [
         { title: "Engineering", desc: "Use of the most advanced technologies in repair processes." },
@@ -695,6 +699,7 @@ export const translations = {
       ctaTitlePrefix: "Klar for å starte et",
       ctaTitleHighlight: "samarbeid?",
       ctaButton: "Få et tilbud",
+      partnersTitle: "Våre partnere",
     },
     apieMus: {
       heroTitlePrefix: "Erfaring. Presisjon.",
@@ -709,6 +714,7 @@ export const translations = {
         "Sertifiserte spesialister med mange års erfaring.",
         "Garanti- og ettergarantiservice.",
         "Konkurransedyktige priser for service i toppklasse.",
+        "Selskapet er forsikret med 1 000 000 € i ansvarsforsikring.",
       ],
       valueCards: [
         { title: "Ingeniørarbeid", desc: "Bruk av den mest avanserte teknologien i reparasjonsprosesser." },

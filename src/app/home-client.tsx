@@ -27,7 +27,24 @@ export default function HomeClient() {
   ];
 
   const brands = [
-    "MAN", "WARTSILA", "CATERPILLAR", "VOLVO PENTA", "YANMAR", "MITSUBISHI", "CUMMINS", "DAIHATSU"
+    { name: "Kojora", src: "/partners/kojora.png", w: 118, h: 114 },
+    { name: "TechMarine", src: "/partners/techmarine.png", w: 250, h: 277 },
+    { name: "Fjord Shipping", src: "/partners/fjord-shipping.png", w: 302, h: 55 },
+    { name: "Misje Rederi AS", src: "/partners/misje-rederi.jpg", w: 392, h: 71 },
+    { name: "BLRT Repair Yards", src: "/partners/blrt-repair-yards.jpg", w: 285, h: 132 },
+    { name: "DFDS", src: "/partners/dfds.png", w: 195, h: 52 },
+    { name: "Wärtsilä", src: "/partners/wartsila.png", w: 352, h: 107 },
+    { name: "Everllence", src: "/partners/everllence.png", w: 402, h: 91 },
+    { name: "Bergen Engines", src: "/partners/bergen-engines.png", w: 152, h: 72 },
+    { name: "Caterpillar", src: "/partners/caterpillar.png", w: 256, h: 47 },
+    { name: "Deutz", src: "/partners/deutz.png", w: 292, h: 47 },
+    { name: "MAK", src: "/partners/mak.png", w: 177, h: 50 },
+    { name: "Volvo Penta", src: "/partners/volvo-penta.png", w: 317, h: 77 },
+    { name: "Cummins", src: "/partners/cummins.png", w: 117, h: 76 },
+    { name: "Yanmar", src: "/partners/yanmar.png", w: 262, h: 42 },
+    { name: "Mitsubishi", src: "/partners/mitsubishi.png", w: 216, h: 42 },
+    { name: "ABC Engines", src: "/partners/abc-engines.png", w: 227, h: 77 },
+    { name: "MTU", src: "/partners/mtu.png", w: 102, h: 42 },
   ];
 
   return (
@@ -160,20 +177,29 @@ export default function HomeClient() {
         </div>
       </section>
 
-      {/* LOOP JUOSTA */}
-      <section className="py-4 bg-white overflow-hidden relative">
+      {/* LOOP JUOSTA - Partneriai */}
+      <section className="py-14 bg-white overflow-hidden relative">
+        <p className="text-center text-base md:text-lg font-black uppercase tracking-[0.3em] text-slate-500 mb-8">
+          {t.home.partnersTitle}
+        </p>
         <div className="absolute inset-y-0 left-0 w-24 bg-gradient-to-r from-white to-transparent z-10" />
         <div className="absolute inset-y-0 right-0 w-24 bg-gradient-to-l from-white to-transparent z-10" />
         <div className="flex" aria-hidden="true">
           <motion.div
-            className="flex gap-10 items-center whitespace-nowrap"
+            className="flex gap-16 items-center whitespace-nowrap"
             animate={{ x: ["0%", "-50%"] }}
             transition={{ ease: "linear", duration: 30, repeat: Infinity }}
           >
             {[...brands, ...brands].map((brand, i) => (
-              <span key={i} className="text-base md:text-xl font-black text-slate-600 hover:text-[#16AFD1] transition-colors uppercase tracking-tighter">
-                {brand}
-              </span>
+              <div key={i} className="flex items-center justify-center h-16 px-5 shrink-0 bg-white rounded-lg border border-slate-100 shadow-sm hover:shadow-md transition-all">
+                <Image
+                  src={brand.src}
+                  alt={brand.name}
+                  width={brand.w}
+                  height={brand.h}
+                  className="h-10 w-auto max-w-[140px] object-contain"
+                />
+              </div>
             ))}
           </motion.div>
         </div>

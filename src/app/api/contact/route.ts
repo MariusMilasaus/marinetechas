@@ -1,10 +1,8 @@
 import { NextResponse } from "next/server";
 import { Resend } from "resend";
 
-const CONTACT_EMAIL = "office@marinetech.lt";
-// Resend reikalauja patvirtinto siuntimo domeno (Resend dashboard > Domains).
-// Kol marinetech.lt nepatvirtintas, naudojamas testinis onboarding@resend.dev sender.
-const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "MarineTECH Website <onboarding@resend.dev>";
+const CONTACT_EMAIL = "info@marinetech.lt";
+const FROM_EMAIL = process.env.RESEND_FROM_EMAIL || "MarineTECH Website <kontaktai@marinetech.lt>";
 
 export async function POST(request: Request) {
   const { name, email, topic, message } = await request.json();
